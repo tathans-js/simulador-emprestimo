@@ -136,4 +136,4 @@ Usuário `admin`, senha `1234`. São credenciais de teste e não pertencem a nen
 
 ## 15. Contato do grupo
 
-«PREENCHER: e-mails institucionais»
+jonathans.jscript@gmail.com

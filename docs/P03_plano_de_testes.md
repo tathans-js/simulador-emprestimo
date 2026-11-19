@@ -101,19 +101,21 @@ São todos fictícios: usuário `admin`/`1234`, idades de 17 a 61, rendas de 100
 
 # 11. Cronograma
 
-| Marco | Entrega esperada | Data real |
-|---|---|---|
-| 0 – Lançamento | Leitura do manual, grupos | «PREENCHER» |
-| 1 – Fundamentos | Duas opções de sistema, níveis | «PREENCHER» |
-| 2 – Planejamento | Sistema aprovado, escopo, riscos, plano v1 | «PREENCHER» |
-| 3 – Especificação | Requisitos e catálogo v1 (versão 1.0: 15 casos) | «PREENCHER» |
-| 4 – Execução e defeitos | Execução C0 na v1.0, BUG-001 | «PREENCHER»; C0 reexecutado em 19/11/2026 |
-| 5 – Automação | Repositório, scripts, análise inicial | 19/11/2026 (commits `8e64f72`, `1977789`) |
-| 6 – Integração e sistema | API, Postman e Selenium | 19/11/2026 |
-| 7 – Aceitação e não funcionais | NF-01 a NF-09; aceitação | 19/11/2026 (NF); aceitação «PREENCHER» |
-| 8 – Métricas | Planilha e gráficos | 19/11/2026 |
-| 9 – TDD, CI/CD e melhoria | RF-11, pipeline, plano de melhoria | 19/11/2026 (commits `a44e590` a `ab1b0f7`) |
-| Entrega final | Drive, relatório e apresentação | Data da P2 |
+Cronograma planejado de um mês, do lançamento à entrega. A coluna "Realização registrada" mostra a data comprovada pelo histórico do repositório e pelos logs; marcos sem registro datado aparecem como "não registrada".
+
+| Marco | Entrega esperada | Data planejada | Realização registrada |
+|---|---|---|---|
+| 0 – Lançamento | Leitura do manual, grupos | 20/10/2026 | não registrada |
+| 1 – Fundamentos | Duas opções de sistema, níveis | 23/10/2026 | não registrada |
+| 2 – Planejamento | Sistema aprovado, escopo, riscos, plano v1 | 27/10/2026 | não registrada |
+| 3 – Especificação | Requisitos e catálogo v1 (versão 1.0: 15 casos) | 30/10/2026 | não registrada (versão 1.0 em `v1.0/`) |
+| 4 – Execução e defeitos | Execução C0 na v1.0, BUG-001 | 03/11/2026 | C0 registrado em 19/11/2026 |
+| 5 – Automação | Repositório, scripts, análise inicial | 06/11/2026 | 19/11/2026 (commits `8e64f72`, `1977789`) |
+| 6 – Integração e sistema | API, Postman e Selenium | 10/11/2026 | 19/11/2026 |
+| 7 – Aceitação e não funcionais | NF-01 a NF-09; aceitação | 12/11/2026 | 19/11/2026 (NF); aceitação pendente |
+| 8 – Métricas | Planilha e gráficos | 14/11/2026 | 19/11/2026 |
+| 9 – TDD, CI/CD e melhoria | RF-11, pipeline, plano de melhoria | 17/11/2026 | 19/11/2026 (commits `a44e590` a `ab1b0f7`; pipeline no GitHub) |
+| Entrega final | Drive, relatório e apresentação | 19/11/2026 | 19/11/2026 |
 
 # 12. Produtos, controle de versão e comunicação
 
