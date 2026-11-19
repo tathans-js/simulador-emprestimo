@@ -69,3 +69,21 @@ test('UT-14 [RF-07/CT-22] renda em branco é dado inválido (não pode virar zer
 test('UT-15 [RF-07] campo ausente (null) é dado inválido', () => {
   assert.equal(validarEntrada({ ...base, idade: null }).valido, false);
 });
+
+// ---- TDD RF-11: o sistema deve informar os motivos da negação ----
+
+test('UT-16 [RF-11] negação por conta inativa informa o motivo "Conta inativa."', () => {
+  assert.deepEqual(avaliarEmprestimo({ ...base, conta: 'nao' }).motivos, ['Conta inativa.']);
+});
+
+test('UT-17 [RF-11] negação com todas as condições falsas informa os três motivos na ordem das regras', () => {
+  assert.deepEqual(avaliarEmprestimo({ idade: 17, renda: 100, valor: 1000, conta: 'nao' }).motivos, [
+    'Idade fora da faixa permitida (18 a 60 anos).',
+    'Renda mensal inferior a 5 vezes o valor solicitado.',
+    'Conta inativa.',
+  ]);
+});
+
+test('UT-18 [RF-11] aprovação não possui motivos de negação', () => {
+  assert.deepEqual(avaliarEmprestimo(base).motivos, []);
+});

@@ -113,4 +113,12 @@ describe('Fluxos ponta a ponta (Selenium)', () => {
     const token = await driver.executeScript('return sessionStorage.getItem("token")');
     assert.equal(token, null);
   }));
+
+  test('E2E-09 [RF-11] empréstimo negado exibe o motivo na tela', () => comCaptura('E2E-09', async () => {
+    await ui.login('admin', '1234');
+    await ui.visivel('app');
+    await ui.simular({ idade: 30, renda: 5000, valor: 1000, conta: 'nao' });
+    const texto = await ui.aguardarTexto('result', 'NEGADO');
+    assert.match(texto, /Conta inativa\./);
+  }));
 });

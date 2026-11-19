@@ -1,0 +1,186 @@
+TDD RF-11 - etapa RED - 19/11/2026 18:04:47 - commit base 71040c7
+✔ UT-01 [RF-02/CT-06] idade 30 (partição válida) é aceita (1.13625ms)
+✔ UT-02 [RF-02/CT-07] idade 17 (abaixo do limite) é rejeitada (0.073375ms)
+✔ UT-03 [RF-02/CT-08] idade 18 (limite inferior inclusivo) é aceita (0.055083ms)
+✔ UT-04 [RF-02/CT-09] idade 60 (limite superior inclusivo) é aceita (0.048291ms)
+✔ UT-05 [RF-02/CT-10] idade 61 (acima do limite) é rejeitada (0.055ms)
+✔ UT-06 [RF-03/CT-13] renda exatamente 5x o valor é suficiente (0.048709ms)
+✔ UT-07 [RF-03/CT-14] renda 1 centavo abaixo de 5x é insuficiente (0.054625ms)
+✔ UT-08 [RF-04/CT-16] conta "nao" é considerada inativa (0.056791ms)
+✔ UT-09 [RF-05/CT-06] todas as condições atendidas resultam em APROVADO (0.107ms)
+✔ UT-10 [RF-05/CT-17] nenhuma condição atendida resulta em NEGADO (0.0965ms)
+✔ UT-11 [RF-07/CT-19] valor solicitado zero é dado inválido (0.059ms)
+✔ UT-12 [RF-07/CT-20] valor solicitado negativo é dado inválido (0.056834ms)
+✔ UT-13 [RF-07/CT-21] idade em branco é dado inválido (não pode virar zero) (0.039375ms)
+✔ UT-14 [RF-07/CT-22] renda em branco é dado inválido (não pode virar zero) (0.036334ms)
+✔ UT-15 [RF-07] campo ausente (null) é dado inválido (0.050833ms)
+✖ UT-16 [RF-11] negação por conta inativa informa o motivo "Conta inativa." (0.906875ms)
+✖ UT-17 [RF-11] negação com todas as condições falsas informa os três motivos na ordem das regras (0.14975ms)
+✖ UT-18 [RF-11] aprovação não possui motivos de negação (0.097333ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 15
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 57.826291
+
+✖ failing tests:
+
+test at tests/unit/regras.test.js:75:1
+✖ UT-16 [RF-11] negação por conta inativa informa o motivo "Conta inativa." (0.906875ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + undefined
+  - [
+  -   'Conta inativa.'
+  - ]
+  
+      at TestContext.<anonymous> (./tests/unit/regras.test.js:76:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: [ 'Conta inativa.' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/unit/regras.test.js:79:1
+✖ UT-17 [RF-11] negação com todas as condições falsas informa os três motivos na ordem das regras (0.14975ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + undefined
+  - [
+  -   'Idade fora da faixa permitida (18 a 60 anos).',
+  -   'Renda mensal inferior a 5 vezes o valor solicitado.',
+  -   'Conta inativa.'
+  - ]
+  
+      at TestContext.<anonymous> (./tests/unit/regras.test.js:80:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: [ 'Idade fora da faixa permitida (18 a 60 anos).', 'Renda mensal inferior a 5 vezes o valor solicitado.', 'Conta inativa.' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/unit/regras.test.js:87:1
+✖ UT-18 [RF-11] aprovação não possui motivos de negação (0.097333ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  
+  undefined !== []
+  
+      at TestContext.<anonymous> (./tests/unit/regras.test.js:88:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+✔ IT-01 [RF-01] login com credenciais válidas retorna 200 e token (48.069917ms)
+✔ IT-02 [RF-01] login com senha inválida retorna 401 e mensagem de erro (2.484875ms)
+✔ IT-03 [RNF-03] criar simulação sem token retorna 401 (1.946667ms)
+✔ IT-04 [RF-05/RF-08] simulação válida retorna 201, APROVADO e fica persistida (3.265542ms)
+✔ IT-05 [RF-04/RF-05] conta inativa retorna 201 com NEGADO (2.32275ms)
+✔ IT-06 [RF-07] dados inválidos retornam 400 e não são persistidos (3.195791ms)
+✔ IT-07 [RF-09] excluir simulação existente retorna 204 e remove do histórico (2.559125ms)
+✔ IT-08 [RF-09] excluir simulação inexistente retorna 404 (1.199542ms)
+✔ IT-09 [RF-10] após logout o token deixa de ser aceito (3.526042ms)
+✔ IT-10 [RNF-04] dados persistem após reinício do servidor (5.971ms)
+✔ IT-11 [RF-07] JSON malformado retorna 400 (4.215667ms)
+✖ IT-12 [RF-11] API devolve os motivos da negação (2.178625ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 11
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 190.265125
+
+✖ failing tests:
+
+test at tests/api/api.test.js:121:1
+✖ IT-12 [RF-11] API devolve os motivos da negação (2.178625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + undefined
+  - [
+  -   'Idade fora da faixa permitida (18 a 60 anos).'
+  - ]
+  
+      at TestContext.<anonymous> (./tests/api/api.test.js:125:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: [ 'Idade fora da faixa permitida (18 a 60 anos).' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+▶ Fluxos ponta a ponta (Selenium)
+  ✔ E2E-01 [RF-01/RF-06/CT-01] login válido exibe a simulação no estado Autenticado (464.712375ms)
+  ✔ E2E-02 [RF-01/CT-02] login inválido mantém tela de login com mensagem de erro (111.353584ms)
+  ✔ E2E-03 [RF-05/RF-06/RF-08/CT-06/CT-29] simulação aprovada aparece no histórico (461.864ms)
+  ✔ E2E-04 [RF-04/RF-05/CT-16] conta inativa resulta em empréstimo negado (648.804958ms)
+  ✔ E2E-05 [RF-06/CT-27] não é possível finalizar sem ter simulado (310.384ms)
+  ✔ E2E-06 [RF-06/CT-26/CT-28] após finalizar, nova simulação fica bloqueada até reiniciar (442.861666ms)
+  ✔ E2E-07 [RF-09/CT-31] excluir simulação remove a linha do histórico (459.564625ms)
+  ✔ E2E-08 [RF-10/CT-32] sair encerra a sessão e volta para o login (337.709ms)
+  ✖ E2E-09 [RF-11] empréstimo negado exibe o motivo na tela (344.290667ms)
+✖ Fluxos ponta a ponta (Selenium) (6421.18925ms)
+ℹ tests 9
+ℹ suites 1
+ℹ pass 8
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6582.21075
+
+✖ failing tests:
+
+test at tests/e2e/fluxos.test.js:117:3
+✖ E2E-09 [RF-11] empréstimo negado exibe o motivo na tela (344.290667ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Conta inativa\./. Input:
+  
+  'EMPRÉSTIMO NEGADO\nRequisitos não atendidos.'
+  
+      at ./tests/e2e/fluxos.test.js:122:12
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async comCaptura (./tests/e2e/fluxos.test.js:39:7)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'EMPRÉSTIMO NEGADO\nRequisitos não atendidos.',
+    expected: /Conta inativa\./,
+    operator: 'match',
+    diff: 'simple'
+  }

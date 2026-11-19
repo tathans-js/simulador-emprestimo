@@ -117,3 +117,10 @@ test('IT-11 [RF-07] JSON malformado retorna 400', async () => {
   });
   assert.equal(resp.status, 400);
 });
+
+test('IT-12 [RF-11] API devolve os motivos da negação', async () => {
+  const token = await logar();
+  const r = await chamar('POST', '/api/simulacoes', { corpo: { ...valida, idade: 61 }, token });
+  assert.equal(r.status, 201);
+  assert.deepEqual(r.corpo.motivos, ['Idade fora da faixa permitida (18 a 60 anos).']);
+});
