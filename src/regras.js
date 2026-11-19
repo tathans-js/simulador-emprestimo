@@ -39,10 +39,11 @@ function avaliarEmprestimo(dados) {
   if (!entrada.valido) {
     return { resultado: 'DADOS_INVALIDOS' };
   }
-  const aprovado = idadeValida(entrada.idade) &&
-    rendaSuficiente(entrada.renda, entrada.valor) &&
-    contaAtiva(dados.conta);
-  return { resultado: aprovado ? 'APROVADO' : 'NEGADO' };
+  const motivos = [];
+  if (!idadeValida(entrada.idade)) motivos.push('Idade fora da faixa permitida (18 a 60 anos).');
+  if (!rendaSuficiente(entrada.renda, entrada.valor)) motivos.push('Renda mensal inferior a 5 vezes o valor solicitado.');
+  if (!contaAtiva(dados.conta)) motivos.push('Conta inativa.');
+  return { resultado: motivos.length === 0 ? 'APROVADO' : 'NEGADO', motivos };
 }
 
 module.exports = { validarEntrada, idadeValida, rendaSuficiente, contaAtiva, avaliarEmprestimo };

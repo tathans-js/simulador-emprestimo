@@ -1,0 +1,66 @@
+TDD RF-11 - etapa GREEN - 19/11/2026 18:05:04 - commit base a44e590
+✔ UT-01 [RF-02/CT-06] idade 30 (partição válida) é aceita (1.036958ms)
+✔ UT-02 [RF-02/CT-07] idade 17 (abaixo do limite) é rejeitada (0.063042ms)
+✔ UT-03 [RF-02/CT-08] idade 18 (limite inferior inclusivo) é aceita (0.053375ms)
+✔ UT-04 [RF-02/CT-09] idade 60 (limite superior inclusivo) é aceita (0.044875ms)
+✔ UT-05 [RF-02/CT-10] idade 61 (acima do limite) é rejeitada (0.052833ms)
+✔ UT-06 [RF-03/CT-13] renda exatamente 5x o valor é suficiente (0.048375ms)
+✔ UT-07 [RF-03/CT-14] renda 1 centavo abaixo de 5x é insuficiente (0.059458ms)
+✔ UT-08 [RF-04/CT-16] conta "nao" é considerada inativa (0.056917ms)
+✔ UT-09 [RF-05/CT-06] todas as condições atendidas resultam em APROVADO (0.108667ms)
+✔ UT-10 [RF-05/CT-17] nenhuma condição atendida resulta em NEGADO (0.098ms)
+✔ UT-11 [RF-07/CT-19] valor solicitado zero é dado inválido (0.06125ms)
+✔ UT-12 [RF-07/CT-20] valor solicitado negativo é dado inválido (0.058875ms)
+✔ UT-13 [RF-07/CT-21] idade em branco é dado inválido (não pode virar zero) (0.041708ms)
+✔ UT-14 [RF-07/CT-22] renda em branco é dado inválido (não pode virar zero) (0.035875ms)
+✔ UT-15 [RF-07] campo ausente (null) é dado inválido (0.053208ms)
+✔ UT-16 [RF-11] negação por conta inativa informa o motivo "Conta inativa." (0.730542ms)
+✔ UT-17 [RF-11] negação com todas as condições falsas informa os três motivos na ordem das regras (0.059875ms)
+✔ UT-18 [RF-11] aprovação não possui motivos de negação (0.045416ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 54.121625
+✔ IT-01 [RF-01] login com credenciais válidas retorna 200 e token (43.551541ms)
+✔ IT-02 [RF-01] login com senha inválida retorna 401 e mensagem de erro (2.035042ms)
+✔ IT-03 [RNF-03] criar simulação sem token retorna 401 (1.634708ms)
+✔ IT-04 [RF-05/RF-08] simulação válida retorna 201, APROVADO e fica persistida (5.241666ms)
+✔ IT-05 [RF-04/RF-05] conta inativa retorna 201 com NEGADO (2.707833ms)
+✔ IT-06 [RF-07] dados inválidos retornam 400 e não são persistidos (4.248083ms)
+✔ IT-07 [RF-09] excluir simulação existente retorna 204 e remove do histórico (3.826ms)
+✔ IT-08 [RF-09] excluir simulação inexistente retorna 404 (3.466459ms)
+✔ IT-09 [RF-10] após logout o token deixa de ser aceito (1.332916ms)
+✔ IT-10 [RNF-04] dados persistem após reinício do servidor (5.002792ms)
+✔ IT-11 [RF-07] JSON malformado retorna 400 (4.40075ms)
+✔ IT-12 [RF-11] API devolve os motivos da negação (1.688542ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 164.818333
+▶ Fluxos ponta a ponta (Selenium)
+  ✔ E2E-01 [RF-01/RF-06/CT-01] login válido exibe a simulação no estado Autenticado (417.204625ms)
+  ✔ E2E-02 [RF-01/CT-02] login inválido mantém tela de login com mensagem de erro (331.964375ms)
+  ✔ E2E-03 [RF-05/RF-06/RF-08/CT-06/CT-29] simulação aprovada aparece no histórico (833.054708ms)
+  ✔ E2E-04 [RF-04/RF-05/CT-16] conta inativa resulta em empréstimo negado (417.653708ms)
+  ✔ E2E-05 [RF-06/CT-27] não é possível finalizar sem ter simulado (117.980833ms)
+  ✔ E2E-06 [RF-06/CT-26/CT-28] após finalizar, nova simulação fica bloqueada até reiniciar (476.272333ms)
+  ✔ E2E-07 [RF-09/CT-31] excluir simulação remove a linha do histórico (656.263042ms)
+  ✔ E2E-08 [RF-10/CT-32] sair encerra a sessão e volta para o login (366.769708ms)
+  ✔ E2E-09 [RF-11] empréstimo negado exibe o motivo na tela (218.323625ms)
+✔ Fluxos ponta a ponta (Selenium) (6440.082958ms)
+ℹ tests 9
+ℹ suites 1
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6573.93675

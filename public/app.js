@@ -81,7 +81,14 @@ async function simulate(evento) {
   if (r.dados.resultado === 'APROVADO') {
     result.innerHTML = '<span class="ok">EMPRÉSTIMO APROVADO</span><br>Proposta gerada com sucesso.';
   } else {
-    result.innerHTML = '<span class="bad">EMPRÉSTIMO NEGADO</span><br>Requisitos não atendidos.';
+    result.innerHTML = '<span class="bad">EMPRÉSTIMO NEGADO</span><br>Requisitos não atendidos:';
+    const lista = document.createElement('ul');
+    r.dados.motivos.forEach((m) => {
+      const li = document.createElement('li');
+      li.textContent = m;
+      lista.appendChild(li);
+    });
+    result.appendChild(lista);
   }
   carregarHistorico();
 }
