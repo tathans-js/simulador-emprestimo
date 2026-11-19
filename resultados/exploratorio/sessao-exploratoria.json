@@ -1,0 +1,89 @@
+{
+  "executadoEm": "2026-11-19T21:15:37.413Z",
+  "linhas": [
+    {
+      "sonda": "Idade decimal 17.9",
+      "status": 201,
+      "resultado": "NEGADO",
+      "idGravado": 1,
+      "motivos": "Idade fora da faixa permitida (18 a 60 anos)."
+    },
+    {
+      "sonda": "Idade decimal 60.5",
+      "status": 201,
+      "resultado": "NEGADO",
+      "idGravado": 2,
+      "motivos": "Idade fora da faixa permitida (18 a 60 anos)."
+    },
+    {
+      "sonda": "Idade texto \"abc\"",
+      "status": 400,
+      "resultado": "Dados inválidos.",
+      "idGravado": "—",
+      "motivos": ""
+    },
+    {
+      "sonda": "Idade com espaços \" 30 \"",
+      "status": 201,
+      "resultado": "APROVADO",
+      "idGravado": 3,
+      "motivos": ""
+    },
+    {
+      "sonda": "Conta com valor fora do domínio \"talvez\"",
+      "status": 201,
+      "resultado": "NEGADO",
+      "idGravado": 4,
+      "motivos": "Conta inativa."
+    },
+    {
+      "sonda": "Conta ausente",
+      "status": 201,
+      "resultado": "NEGADO",
+      "idGravado": 5,
+      "motivos": "Conta inativa."
+    },
+    {
+      "sonda": "Renda e valor 1e308",
+      "status": 201,
+      "resultado": "NEGADO",
+      "idGravado": 6,
+      "motivos": "Renda mensal inferior a 5 vezes o valor solicitado."
+    },
+    {
+      "sonda": "Idade 150",
+      "status": 201,
+      "resultado": "NEGADO",
+      "idGravado": 7,
+      "motivos": "Idade fora da faixa permitida (18 a 60 anos)."
+    },
+    {
+      "sonda": "Renda zero",
+      "status": 201,
+      "resultado": "NEGADO",
+      "idGravado": 8,
+      "motivos": "Renda mensal inferior a 5 vezes o valor solicitado."
+    },
+    {
+      "sonda": "Campos extras no JSON (admin, id)",
+      "status": 201,
+      "resultado": "APROVADO",
+      "idGravado": 9,
+      "motivos": ""
+    },
+    {
+      "sonda": "Corpo de 200 KB",
+      "status": 400,
+      "resultado": "corpo muito grande",
+      "idGravado": "—",
+      "motivos": ""
+    },
+    {
+      "sonda": "Dois envios simultâneos (duplo clique)",
+      "status": "201,201",
+      "resultado": "11 registros no total",
+      "idGravado": "—",
+      "motivos": ""
+    }
+  ]
+}
