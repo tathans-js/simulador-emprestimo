@@ -5,8 +5,15 @@ const $ = (id) => document.getElementById(id);
 const moeda = (v) => Number(v).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 let token = sessionStorage.getItem('token');
 
+let estadoAtual = 'Não autenticado';
+
+/* Máquina de estados (RF-06): Não autenticado → Autenticado → Em Simulação → Finalizado. */
 function setState(s) {
+  estadoAtual = s;
   $('state').textContent = s;
+  $('btnSimular').disabled = s === 'Finalizado';
+  $('btnFinalizar').disabled = s !== 'Em Simulação';
+  $('btnNova').classList.toggle('hidden', s !== 'Finalizado');
 }
 
 async function chamarApi(metodo, caminho, corpo) {
@@ -56,6 +63,7 @@ async function login(evento) {
 
 async function simulate(evento) {
   evento.preventDefault();
+  if (estadoAtual === 'Finalizado') return;
   const result = $('result');
   const r = await chamarApi('POST', '/api/simulacoes', {
     idade: $('age').value,
@@ -79,9 +87,16 @@ async function simulate(evento) {
 }
 
 function finish() {
+  if (estadoAtual !== 'Em Simulação') return;
   setState('Finalizado');
   $('result').classList.remove('hidden');
   $('result').innerHTML = '<strong>Simulação finalizada.</strong>';
+}
+
+function novaSimulacao() {
+  $('formSimulacao').reset();
+  $('result').classList.add('hidden');
+  setState('Autenticado');
 }
 
 async function sair() {
@@ -125,5 +140,6 @@ $('formLogin').addEventListener('submit', login);
 $('formSimulacao').addEventListener('submit', simulate);
 $('btnFinalizar').addEventListener('click', finish);
 $('btnSair').addEventListener('click', sair);
+$('btnNova').addEventListener('click', novaSimulacao);
 
 if (token) mostrarApp();
