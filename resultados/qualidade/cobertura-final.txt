@@ -1,0 +1,51 @@
+✔ IT-01 [RF-01] login com credenciais válidas retorna 200 e token (36.520917ms)
+✔ IT-02 [RF-01] login com senha inválida retorna 401 e mensagem de erro (1.600125ms)
+✔ IT-03 [RNF-03] criar simulação sem token retorna 401 (0.99975ms)
+✔ IT-04 [RF-05/RF-08] simulação válida retorna 201, APROVADO e fica persistida (3.485333ms)
+✔ IT-05 [RF-04/RF-05] conta inativa retorna 201 com NEGADO (1.825666ms)
+✔ IT-06 [RF-07] dados inválidos retornam 400 e não são persistidos (2.303166ms)
+✔ IT-07 [RF-09] excluir simulação existente retorna 204 e remove do histórico (2.347958ms)
+✔ IT-08 [RF-09] excluir simulação inexistente retorna 404 (1.6485ms)
+✔ IT-09 [RF-10] após logout o token deixa de ser aceito (1.176375ms)
+✔ IT-10 [RNF-04] dados persistem após reinício do servidor (4.687458ms)
+✔ IT-11 [RF-07] JSON malformado retorna 400 (3.988375ms)
+✔ IT-12 [RF-11] API devolve os motivos da negação (1.851833ms)
+✔ UT-01 [RF-02/CT-06] idade 30 (partição válida) é aceita (0.590167ms)
+✔ UT-02 [RF-02/CT-07] idade 17 (abaixo do limite) é rejeitada (0.088375ms)
+✔ UT-03 [RF-02/CT-08] idade 18 (limite inferior inclusivo) é aceita (0.054125ms)
+✔ UT-04 [RF-02/CT-09] idade 60 (limite superior inclusivo) é aceita (0.053417ms)
+✔ UT-05 [RF-02/CT-10] idade 61 (acima do limite) é rejeitada (0.051875ms)
+✔ UT-06 [RF-03/CT-13] renda exatamente 5x o valor é suficiente (0.074875ms)
+✔ UT-07 [RF-03/CT-14] renda 1 centavo abaixo de 5x é insuficiente (0.068583ms)
+✔ UT-08 [RF-04/CT-16] conta "nao" é considerada inativa (0.079958ms)
+✔ UT-09 [RF-05/CT-06] todas as condições atendidas resultam em APROVADO (0.213375ms)
+✔ UT-10 [RF-05/CT-17] nenhuma condição atendida resulta em NEGADO (0.088083ms)
+✔ UT-11 [RF-07/CT-19] valor solicitado zero é dado inválido (0.075458ms)
+✔ UT-12 [RF-07/CT-20] valor solicitado negativo é dado inválido (0.0465ms)
+✔ UT-13 [RF-07/CT-21] idade em branco é dado inválido (não pode virar zero) (0.042209ms)
+✔ UT-14 [RF-07/CT-22] renda em branco é dado inválido (não pode virar zero) (0.039292ms)
+✔ UT-15 [RF-07] campo ausente (null) é dado inválido (0.047792ms)
+✔ UT-16 [RF-11] negação por conta inativa informa o motivo "Conta inativa." (0.71775ms)
+✔ UT-17 [RF-11] negação com todas as condições falsas informa os três motivos na ordem das regras (0.058916ms)
+✔ UT-18 [RF-11] aprovação não possui motivos de negação (0.044333ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 140.36525
+ℹ start of coverage report
+ℹ -----------------------------------------------------------------------
+ℹ file            | line % | branch % | funcs % | uncovered lines
+ℹ -----------------------------------------------------------------------
+ℹ src             |        |          |         | 
+ℹ  auth.js        | 100.00 |   100.00 |  100.00 | 
+ℹ  regras.js      | 100.00 |   100.00 |  100.00 | 
+ℹ  repositorio.js |  97.92 |   100.00 |   87.50 | 43
+ℹ  servidor.js    |  88.15 |    81.82 |   83.33 | 92 105-113 119 129-133
+ℹ -----------------------------------------------------------------------
+ℹ all files       |  93.80 |    91.01 |   90.70 | 
+ℹ -----------------------------------------------------------------------
+ℹ end of coverage report

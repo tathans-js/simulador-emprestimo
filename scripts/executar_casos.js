@@ -108,6 +108,7 @@ async function main() {
     async sair() { await el('btnSair').click(); await driver.wait(until.elementIsVisible(el('login')), 3000).catch(() => {}); },
     async recarregar() { await driver.navigate().refresh(); await pausa(400); },
     async reiniciarServidor() { await parar(); await subir(); },
+    async itensMotivos() { return driver.findElements(By.css('#result li')); },
     async forcarTelaSemLogin() { await driver.executeScript('document.getElementById("app").classList.remove("hidden")'); },
   };
 

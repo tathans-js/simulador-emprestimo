@@ -191,6 +191,15 @@ const casos = [
       return { simulacaoProcessada: /APROVADO|NEGADO/.test(txt) ? 'sim' : 'não' };
     },
   },
+  {
+    id: 'CT-34', titulo: 'Negação informa os motivos', requisitos: 'RF-11; RF-05', riscos: 'R-05', nivel: 'Sistema (interface + API)',
+    tecnica: 'Tabela de decisão (motivos por condição falsa)', tipo: 'Negativo', prioridade: 'Média', criadoNoCiclo: 'C2',
+    preCondicoes: 'Usuário autenticado. Caso criado após a evolução por TDD (RF-11).', dados: 'Idade=17; Renda=100; Valor=1000; Conta ativa=Não',
+    passos: ['Fazer login.', 'Preencher idade 17, renda 100, valor 1000, conta inativa.', 'Clicar em "Simular empréstimo".', 'Ler a lista de motivos exibida.'],
+    esperado: { resultado: NEG, quantidadeMotivos: '3' },
+    automacao: 'Sim – UT-16, UT-17, IT-12, E2E-09',
+    async executar(h) { await h.login('admin', '1234'); await h.simular({ idade: 17, renda: 100, valor: 1000, conta: 'nao' }); return { resultado: await h.resultado(), quantidadeMotivos: String((await h.itensMotivos()).length) }; },
+  },
 ];
 
 module.exports = { casos };

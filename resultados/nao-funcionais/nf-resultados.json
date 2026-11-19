@@ -1,5 +1,5 @@
 {
-  "executadoEm": "2026-11-19T20:59:17.738Z",
+  "executadoEm": "2026-11-19T21:06:55.496Z",
   "node": "v24.22.2",
   "plataforma": "darwin",
   "medicoes": {
@@ -7,19 +7,19 @@
       "criterio": "p95 < 500 ms",
       "unidade": "ms",
       "n": 100,
-      "media": 0.84,
-      "p95": 1.76,
-      "min": 0.5,
-      "max": 6.14
+      "media": 0.88,
+      "p95": 1.97,
+      "min": 0.52,
+      "max": 2.97
     },
     "NF-02": {
       "criterio": "máximo < 2000 ms",
       "unidade": "ms",
       "n": 10,
-      "media": 11.54,
-      "p95": 45.2,
-      "min": 4.9,
-      "max": 45.2
+      "media": 7.84,
+      "p95": 31.5,
+      "min": 4.8,
+      "max": 31.5
     },
     "NF-03": {
       "criterio": "login + simulação aprovada",
