@@ -175,8 +175,21 @@ def preparar(md):
     for k, f in MARCADORES.items():
         if k in md:
             md = md.replace(k, f())
-    md = md.replace(":::\n\n# Folha de identificação", ":::\n" + QUEBRA + SUMARIO + QUEBRA + "\n# Folha de identificação")
+    if ":::\n\n# Folha de identificação" in md:
+        md = md.replace(":::\n\n# Folha de identificação", ":::\n" + QUEBRA + sumario_docx(md) + QUEBRA + "\n# Folha de identificação")
     return md
+
+
+def sumario_docx(md):
+    """Sumário fixo para o DOCX (títulos de nível 1 e 2) + marcador onde o HTML insere o próprio sumário."""
+    from xml.sax.saxutils import escape
+    corpo = md.split("# Folha de identificação", 1)[1]
+    titulos = [("# ", "Folha de identificação")] + re.findall(r"^(#{1,2} )(.+)$", corpo, re.M)
+    pars = ['<w:p><w:r><w:rPr><w:b/><w:sz w:val="32"/></w:rPr><w:t>Sumário</w:t></w:r></w:p>']
+    for marca, t in titulos:
+        recuo = 0 if marca == "# " else 400
+        pars.append(f'<w:p><w:pPr><w:ind w:left="{recuo}"/></w:pPr><w:r><w:t xml:space="preserve">{escape(t)}</w:t></w:r></w:p>')
+    return "\n```{=openxml}\n" + "".join(pars) + "\n```\n\n```{=html}\n<div id=\"sumario-aqui\"></div>\n```\n"
 
 
 def converter(caminho):

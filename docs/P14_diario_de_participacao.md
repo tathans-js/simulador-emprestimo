@@ -10,14 +10,14 @@ subtitle: "Simulador de Empréstimo – Projeto Integrado P2 – TQS 2026"
 | Data | Atividade | Responsável principal | Colaboradores | Tempo | Evidência |
 |---|---|---|---|---|---|
 | «PREENCHER» | Versão 1.0 do sistema, primeiro relatório de QA e 15 casos (CT01–CT15) | «PREENCHER» | | | `v1.0/` (commit `1aa6f8d`) |
-| 19/11/2026 | Evolução v2.0 (API REST, persistência, histórico, logout) | «PREENCHER» | Assistente de IA (apoio) | | commit `8e64f72` |
-| 19/11/2026 | Suítes unitária, API, Postman, Selenium, não funcionais e pipeline CI | «PREENCHER» | Assistente de IA (apoio) | | commit `1977789` |
-| 19/11/2026 | Catálogo de 33 casos; execuções C0 (v1.0) e C1 (v2.0) com capturas; linha de base de qualidade | «PREENCHER» | Assistente de IA (apoio) | | commit `8331ee9`; `resultados/execucoes/` |
-| 19/11/2026 | Correções BUG-001, 002, 003 e 005 com reteste | «PREENCHER» | Assistente de IA (apoio) | | commits `59502b6`, `f69ffc3`, `9e18b69`, `71040c7` |
-| 19/11/2026 | TDD RF-11 (RED/GREEN/REFACTOR) e versão 2.1.0 | «PREENCHER» | Assistente de IA (apoio) | | commits `a44e590`, `263e841`, `ab1b0f7`, `b99bb99` |
-| 19/11/2026 | Ciclo C2 (reteste/regressão), CT-34, sessão exploratória, métricas e documentos | «PREENCHER» | Assistente de IA (apoio) | | commit `3c50ab2` e seguintes; `docs/` |
+| 19/11/2026 | Evolução v2.0 (API REST, persistência, histórico, logout) | Jonathans David da Silva P Jr | Assistente de IA (apoio) | | commit `8e64f72` |
+| 19/11/2026 | Suítes unitária, API, Postman, Selenium, não funcionais e pipeline CI | Pedro Henrique Teixeira Moroni | Guilherme de Oliveira Lazari (não funcionais e pipeline); Assistente de IA (apoio) | | commit `1977789` |
+| 19/11/2026 | Catálogo de 33 casos; execuções C0 (v1.0) e C1 (v2.0) com capturas; linha de base de qualidade | Lucas Soares de Almeida | Guilherme de Oliveira Lazari (linha de base de qualidade); Assistente de IA (apoio) | | commit `8331ee9`; `resultados/execucoes/` |
+| 19/11/2026 | Correções BUG-001, 002, 003 e 005 com reteste | Lucas Soares de Almeida | Pedro Henrique Teixeira Moroni; Assistente de IA (apoio) | | commits `59502b6`, `f69ffc3`, `9e18b69`, `71040c7` |
+| 19/11/2026 | TDD RF-11 (RED/GREEN/REFACTOR) e versão 2.1.0 | Pedro Henrique Teixeira Moroni | Assistente de IA (apoio) | | commits `a44e590`, `263e841`, `ab1b0f7`, `b99bb99` |
+| 19/11/2026 | Ciclo C2 (reteste/regressão), CT-34, sessão exploratória, métricas e documentos | Lucas Soares de Almeida | Guilherme de Oliveira Lazari (métricas); Jonathans David da Silva P Jr (documentos); Assistente de IA (apoio) | | commit `3c50ab2` e seguintes; `docs/` |
 | «PREENCHER» | Execução da aceitação com representante (AC-01 a AC-04) | «PREENCHER» | «representante» | | P09, seção 1.1 |
-| 19/11/2026 | Repositório publicado, pipeline executado no GitHub (falha de ambiente Node 20 corrigida, falha controlada e execução aprovada) e 5 issues registradas | «PREENCHER» | | | https://github.com/tathans-js/simulador-emprestimo – links no P11 |
+| 19/11/2026 | Repositório publicado, pipeline executado no GitHub (falha de ambiente Node 20 corrigida, falha controlada e execução aprovada) e 5 issues registradas | Guilherme de Oliveira Lazari | Jonathans David da Silva P Jr | https://github.com/tathans-js/simulador-emprestimo – links no P11 |
 | «PREENCHER» | Revisão final, gravação do vídeo e montagem do Drive | «PREENCHER» | | | pasta 14 e 16 |
 
 # 2. Contribuição de cada integrante
