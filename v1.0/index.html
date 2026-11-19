@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulador de Empréstimo - QA Demo</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f6f8;margin:0;color:#222}
+header{background:#243447;color:white;padding:20px}
+main{max-width:900px;margin:25px auto;background:white;padding:25px;border-radius:10px;box-shadow:0 2px 10px #0002}
+label{display:block;margin-top:14px;font-weight:bold}
+input,select{width:100%;padding:10px;margin-top:5px;box-sizing:border-box}
+button{margin-top:18px;padding:11px 18px;border:0;border-radius:6px;background:#2463eb;color:white;cursor:pointer}
+button.secondary{background:#666}
+.hidden{display:none}
+#result{margin-top:20px;padding:15px;border-radius:7px;background:#eef3ff}
+.ok{color:#137333;font-weight:bold}.bad{color:#b00020;font-weight:bold}
+.status{padding:8px;background:#eee;border-radius:6px;margin-top:10px}
+.card{border:1px solid #ddd;padding:15px;border-radius:8px;margin-top:15px}
+small{color:#666}
+</style>
+</head>
+<body>
+<header><h1>Simulador de Empréstimo</h1><p>Sistema demonstrativo para exercício de QA</p></header>
+<main>
+<div id="login">
+  <h2>Login</h2>
+  <label>Usuário</label><input id="user" placeholder="admin">
+  <label>Senha</label><input id="pass" type="password" placeholder="1234">
+  <button onclick="login()">Entrar</button>
+  <p><small>Credenciais para teste: admin / 1234</small></p>
+  <div id="loginMsg"></div>
+</div>
+
+<div id="app" class="hidden">
+  <div class="status">Estado atual: <strong id="state">Autenticado</strong></div>
+  <h2>Simulação</h2>
+  <label>Idade (18 a 60 anos)</label>
+  <input id="age" type="number" min="0">
+  <label>Renda mensal (R$)</label>
+  <input id="income" type="number" min="0" step="0.01">
+  <label>Valor solicitado (R$)</label>
+  <input id="amount" type="number" min="0" step="0.01">
+  <label>Conta ativa?</label>
+  <select id="active"><option value="sim">Sim</option><option value="nao">Não</option></select>
+  <button onclick="simulate()">Simular empréstimo</button>
+  <button class="secondary" onclick="finish()">Finalizar</button>
+  <div id="result" class="hidden"></div>
+</div>
+</main>
+
+<script>
+let state = "Não autenticado";
+
+function setState(s){
+  state=s;
+  document.getElementById("state").textContent=s;
+}
+
+function login(){
+  const u=document.getElementById("user").value;
+  const p=document.getElementById("pass").value;
+  const msg=document.getElementById("loginMsg");
+  if(u==="admin" && p==="1234"){
+    document.getElementById("login").classList.add("hidden");
+    document.getElementById("app").classList.remove("hidden");
+    setState("Autenticado");
+    msg.textContent="";
+  } else {
+    msg.innerHTML='<span class="bad">Login ou senha inválidos.</span>';
+  }
+}
+
+function simulate(){
+  // Regra de negócio:
+  // idade válida: 18 <= idade <= 60
+  // conta deve estar ativa
+  // renda deve ser pelo menos 5x o valor solicitado
+  const age=Number(document.getElementById("age").value);
+  const income=Number(document.getElementById("income").value);
+  const amount=Number(document.getElementById("amount").value);
+  const active=document.getElementById("active").value;
+  const result=document.getElementById("result");
+
+  if(!Number.isFinite(age)||!Number.isFinite(income)||!Number.isFinite(amount) ||
+     age<0 || income<0 || amount<=0){
+    result.classList.remove("hidden");
+    result.innerHTML='<span class="bad">Dados inválidos.</span>';
+    return;
+  }
+
+  // BUG INTENCIONAL PARA O EXERCÍCIO DE QA:
+  // O sistema deveria aceitar 18 e 60, mas usa limites exclusivos.
+  const ageValid = age > 18 && age < 60;
+  const incomeValid = income >= amount*5;
+  const activeValid = active === "sim";
+
+  setState("Em Simulação");
+
+  if(ageValid && incomeValid && activeValid){
+    result.innerHTML='<span class="ok">EMPRÉSTIMO APROVADO</span><br>Proposta gerada com sucesso.';
+  } else {
+    result.innerHTML='<span class="bad">EMPRÉSTIMO NEGADO</span><br>Requisitos não atendidos.';
+  }
+  result.classList.remove("hidden");
+}
+
+function finish(){
+  setState("Finalizado");
+  document.getElementById("result").classList.remove("hidden");
+  document.getElementById("result").innerHTML="<strong>Simulação finalizada.</strong>";
+}
+</script>
+</body>
+</html>

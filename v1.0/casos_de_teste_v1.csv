@@ -1,0 +1,16 @@
+ID,Técnica,Cenário,Esperado,Obtido,Status
+CT01,Partição,"Idade 30, renda 5000, pedido 1000, ativa",Aprovado,Aprovado,PASSOU
+CT02,Partição,"Idade 17, demais válidos",Negado,Negado,PASSOU
+CT03,Partição,"Idade 61, demais válidos",Negado,Negado,PASSOU
+CT04,Valor limite,Idade 17,Negado,Negado,PASSOU
+CT05,Valor limite,Idade 18,Aprovado,Negado,FALHOU
+CT06,Valor limite,Idade 60,Aprovado,Negado,FALHOU
+CT07,Valor limite,Idade 61,Negado,Negado,PASSOU
+CT08,Tabela de decisão,Idade válida + renda válida + conta ativa,Aprovado,Aprovado,PASSOU
+CT09,Tabela de decisão,Idade inválida + renda válida + conta ativa,Negado,Negado,PASSOU
+CT10,Tabela de decisão,Idade válida + renda insuficiente + conta ativa,Negado,Negado,PASSOU
+CT11,Tabela de decisão,Idade válida + renda válida + conta inativa,Negado,Negado,PASSOU
+CT12,Estado,Login correto,Autenticado,Autenticado,PASSOU
+CT13,Estado,Login incorreto,Permanecer bloqueado,Permanecer bloqueado,PASSOU
+CT14,Estado,Simular,Em Simulação,Em Simulação,PASSOU
+CT15,Estado,Finalizar,Finalizado,Finalizado,PASSOU
