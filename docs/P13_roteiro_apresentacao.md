@@ -7,13 +7,13 @@ subtitle: "Simulador de Empréstimo – Projeto Integrado P2 – TQS 2026"
 
 | Tempo | Bloco (item 13.1) | Slides | Apresentador |
 |---|---|---|---|
-| 0:00–1:30 | 1. Sistema, objetivo e escopo | 1–3 | «Integrante 1» |
-| 1:30–3:00 | 2. Riscos e estratégia de teste | 4–5 | «Integrante 1» |
-| 3:00–5:30 | 3. Caso manual, evidência e defeito (BUG-001) **+ demonstração ao vivo** | 6–7 | «Integrante 2» |
-| 5:30–8:30 | 4. Testes automatizados em dois níveis **(demonstração)** | 8–9 | «Integrante 3» |
-| 8:30–10:30 | 5. Aceitação, não funcionais e métricas | 10–11 | «Integrante 2» |
-| 10:30–13:00 | 6. TDD e pipeline **(demonstração)** | 12–13 | «Integrante 3» |
-| 13:00–14:30 | 7. Conclusão e melhorias | 14 | «Integrante 1» |
+| 0:00–1:30 | 1. Sistema, objetivo e escopo | 1–3 | Jonathans David da Silva P Jr |
+| 1:30–3:00 | 2. Riscos e estratégia de teste | 4–5 | Jonathans David da Silva P Jr |
+| 3:00–5:30 | 3. Caso manual, evidência e defeito (BUG-001) **+ demonstração ao vivo** | 6–7 | Lucas Soares de Almeida |
+| 5:30–8:30 | 4. Testes automatizados em dois níveis **(demonstração)** | 8–9 | Pedro Henrique Teixeira Moroni |
+| 8:30–10:30 | 5. Aceitação, não funcionais e métricas | 10–11 | Lucas Soares de Almeida (aceitação) e Guilherme de Oliveira Lazari (não funcionais e métricas) |
+| 10:30–13:00 | 6. TDD e pipeline **(demonstração)** | 12–13 | Pedro Henrique Teixeira Moroni (TDD) e Guilherme de Oliveira Lazari (pipeline) |
+| 13:00–14:30 | 7. Conclusão e melhorias | 14 | Jonathans David da Silva P Jr |
 
 # 2. Preparação (antes da aula)
 

@@ -29,7 +29,7 @@ def br(x):
 SLIDES = [
     {"titulo": "Planejamento, execução e avaliação da qualidade do Simulador de Empréstimo",
      "topicos": ["Projeto Integrado P2 – Testes e Qualidade de Software", "UNISAGRADO – Ciência da Computação – 2026",
-                 "Prof. Dr. Elvio Gilberto da Silva", "«PREENCHER: integrantes»"], "capa": True},
+                 "Prof. Dr. Elvio Gilberto da Silva", "Jonathans David da Silva P Jr · Lucas Soares de Almeida", "Pedro Henrique Teixeira Moroni · Guilherme de Oliveira Lazari"], "capa": True},
     {"titulo": "1. Sistema e objetivo",
      "topicos": ["Simula concessão de empréstimo: idade (18–60), renda ≥ 5x o valor, conta ativa",
                  "v1.0: página única, sem servidor → v2.1.0: interface + API REST + persistência em JSON",

@@ -65,9 +65,10 @@ Tipos: funcional, regressão, reteste, segurança básica, desempenho básico, c
 
 | Papel | Integrante | Responsabilidades |
 |---|---|---|
-| Coordenação e planejamento | «PREENCHER» | Plano, riscos, cronograma, integração dos documentos |
-| Análise e execução manual | «PREENCHER» | Requisitos, casos, execuções, defeitos |
-| Automação e qualidade | «PREENCHER» | Scripts, pipeline, métricas, TDD |
+| Coordenação e planejamento | Jonathans David da Silva P Jr | Plano, riscos, cronograma, integração dos documentos e relatório final |
+| Análise e execução manual | Lucas Soares de Almeida | Requisitos, casos, execuções, defeitos e aceitação |
+| Automação de testes | Pedro Henrique Teixeira Moroni | Testes unitários, de API (Postman) e de interface (Selenium) |
+| Qualidade, métricas e CI/CD | Guilherme de Oliveira Lazari | Pipeline, TDD, análise de qualidade e métricas |
 
 # 9. Dados de teste
 

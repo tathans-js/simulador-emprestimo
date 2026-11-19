@@ -8,9 +8,12 @@ UNISAGRADO · Ciência da Computação · Testes e Qualidade de Software · Prof
 
 | Integrante | RA | Papel principal |
 |---|---|---|
-| «PREENCHER: nome 1» | «RA» | Coordenação e planejamento |
-| «PREENCHER: nome 2» | «RA» | Análise e execução manual |
-| «PREENCHER: nome 3 (se trio)» | «RA» | Automação e qualidade |
+| Jonathans David da Silva P Jr | 23110246 | Coordenação e planejamento |
+| Lucas Soares de Almeida | 23210133 | Análise e execução manual |
+| Pedro Henrique Teixeira Moroni | 23110956 | Automação de testes |
+| Guilherme de Oliveira Lazari | 23110982 | Qualidade, métricas e CI/CD |
+
+> O manual (item 4.1) prevê duplas ou trios. Um grupo de quatro integrantes depende de autorização expressa do professor.
 
 Turma: «PREENCHER» · Grupo: «PREENCHER: GRUPOXX»
 

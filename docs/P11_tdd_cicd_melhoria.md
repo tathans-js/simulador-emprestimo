@@ -40,10 +40,10 @@ Arquivos: `resultados/qualidade/eslint-linha-de-base.json`, `eslint-final.json`,
 
 | # | Ação | Origem | Prioridade | Responsável | Critério de verificação |
 |---|---|---|---|---|---|
-| M-01 | Rodar o pipeline real no GitHub (falha + correção) e ativar proteção da branch `main` exigindo CI verde | Item 9.15 | Alta | «PREENCHER» | Duas execuções com links; merge bloqueado com CI vermelho |
-| M-02 | Validar o domínio do campo `conta` ({sim, nao}) e exigir idade inteira (API 400) | OBS-01, OBS-02 | Alta | «PREENCHER» | Novos UT/IT por TDD; sessão exploratória sem 201 para essas entradas |
-| M-03 | Desabilitar "Simular" durante a requisição (evitar duplicidade) | OBS-03 | Média | «PREENCHER» | E2E com duplo clique gera 1 registro |
-| M-04 | Executar o SonarQube (SonarCloud via GitHub Actions) e comparar com o ESLint | Item 9.16 | Média | «PREENCHER» | Relatório SonarCloud com Quality Gate aprovado |
-| M-05 | Zerar os 10 avisos ESLint restantes (constantes HTTP no cliente; dividir `criarServidor`) | Análise de qualidade | Baixa | «PREENCHER» | `npm run lint` com 0 avisos e testes verdes |
-| M-06 | Expiração de sessão por tempo e limite de tentativas de login | Risco R-10 | Média | «PREENCHER» | IT de token expirado retorna 401; 5 falhas bloqueiam por 1 min |
-| M-07 | Executar a aceitação com representante externo e repetir a usabilidade após os ajustes | Item 9.11 | Alta | «PREENCHER» | 4 cenários com decisão "Aceito" |
+| M-01 | Rodar o pipeline real no GitHub (falha + correção) e ativar proteção da branch `main` exigindo CI verde | Item 9.15 | Alta | Guilherme de Oliveira Lazari | Duas execuções com links; merge bloqueado com CI vermelho |
+| M-02 | Validar o domínio do campo `conta` ({sim, nao}) e exigir idade inteira (API 400) | OBS-01, OBS-02 | Alta | Pedro Henrique Teixeira Moroni | Novos UT/IT por TDD; sessão exploratória sem 201 para essas entradas |
+| M-03 | Desabilitar "Simular" durante a requisição (evitar duplicidade) | OBS-03 | Média | Pedro Henrique Teixeira Moroni | E2E com duplo clique gera 1 registro |
+| M-04 | Executar o SonarQube (SonarCloud via GitHub Actions) e comparar com o ESLint | Item 9.16 | Média | Guilherme de Oliveira Lazari | Relatório SonarCloud com Quality Gate aprovado |
+| M-05 | Zerar os 10 avisos ESLint restantes (constantes HTTP no cliente; dividir `criarServidor`) | Análise de qualidade | Baixa | Pedro Henrique Teixeira Moroni | `npm run lint` com 0 avisos e testes verdes |
+| M-06 | Expiração de sessão por tempo e limite de tentativas de login | Risco R-10 | Média | Jonathans David da Silva P Jr | IT de token expirado retorna 401; 5 falhas bloqueiam por 1 min |
+| M-07 | Executar a aceitação com representante externo e repetir a usabilidade após os ajustes | Item 9.11 | Alta | Lucas Soares de Almeida | 4 cenários com decisão "Aceito" |

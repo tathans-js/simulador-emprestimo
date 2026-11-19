@@ -16,7 +16,7 @@ Disciplina: Testes e Qualidade de Software
 
 Sistema testado: Simulador de Empréstimo – versão 2.1.0
 
-Integrantes: «PREENCHER: nome 1», «PREENCHER: nome 2», «PREENCHER: nome 3»
+Integrantes: Jonathans David da Silva P Jr · Lucas Soares de Almeida · Pedro Henrique Teixeira Moroni · Guilherme de Oliveira Lazari
 
 Professor: Prof. Dr. Elvio Gilberto da Silva
 
@@ -28,7 +28,7 @@ Bauru – 2026
 | Item | Informação |
 |---|---|
 | Turma / grupo | «PREENCHER» / «PREENCHER: GRUPOXX» |
-| Integrantes e RA | «PREENCHER» |
+| Integrantes e RA | Jonathans David da Silva P Jr – 23110246; Lucas Soares de Almeida – 23210133; Pedro Henrique Teixeira Moroni – 23110956; Guilherme de Oliveira Lazari – 23110982 |
 | Repositório | «PREENCHER: URL do GitHub» |
 | Pipeline (GitHub Actions) | «PREENCHER: URL /actions» |
 | Defeitos (GitHub Issues) | «PREENCHER: URL /issues» |

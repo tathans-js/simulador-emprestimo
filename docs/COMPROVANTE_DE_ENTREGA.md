@@ -7,7 +7,7 @@ subtitle: "Testes e Qualidade de Software – UNISAGRADO 2026"
 |---|---|
 | Pasta | P2_TQS_2026_«TURMA»_GRUPO«XX»_SIMULADOR-EMPRESTIMO |
 | Data e hora da entrega | «PREENCHER: dd/mm/aaaa hh:mm» |
-| Integrantes | «PREENCHER» |
+| Integrantes | Jonathans David da Silva P Jr (23110246); Lucas Soares de Almeida (23210133); Pedro Henrique Teixeira Moroni (23110956); Guilherme de Oliveira Lazari (23110982) |
 | Repositório | «PREENCHER» |
 
 # Checklist final do grupo (item 16)
@@ -37,4 +37,10 @@ subtitle: "Testes e Qualidade de Software – UNISAGRADO 2026"
 
 Assinaturas digitais do grupo:
 
-Integrante 1: ______________________________ Integrante 2: ______________________________ Integrante 3: ______________________________
+Jonathans David da Silva P Jr (RA 23110246): ______________________________
+
+Lucas Soares de Almeida (RA 23210133): ______________________________
+
+Pedro Henrique Teixeira Moroni (RA 23110956): ______________________________
+
+Guilherme de Oliveira Lazari (RA 23110982): ______________________________

@@ -8,7 +8,7 @@ subtitle: "Projeto Integrado P2 – Testes e Qualidade de Software – UNISAGRAD
 | Campo | Preenchimento do grupo |
 |---|---|
 | Turma e grupo | «PREENCHER: turma» – «PREENCHER: GRUPOXX» |
-| Integrantes | «PREENCHER: nome e RA de cada integrante» |
+| Integrantes | Jonathans David da Silva P Jr (RA 23110246); Lucas Soares de Almeida (RA 23210133); Pedro Henrique Teixeira Moroni (RA 23110956); Guilherme de Oliveira Lazari (RA 23110982) |
 | Nome do sistema | Simulador de Empréstimo |
 | Versão testada | 2.1.0 (linha de base: 1.0) |
 | Origem do sistema | Sistema acadêmico desenvolvido pelo grupo. A versão 1.0 (página única) foi evoluída para a 2.0 (cliente + API REST + persistência) para atender ao item 5.3 do manual. |
@@ -25,4 +25,6 @@ subtitle: "Projeto Integrado P2 – Testes e Qualidade de Software – UNISAGRAD
 | Ajustes solicitados | «PREENCHER» |
 | Data da aprovação | «PREENCHER» |
 
-> **Observação:** a evolução da v1.0 para a v2.0 (API e persistência) altera o sistema apresentado na proposta. É preciso confirmar com o professor que essa mudança de escopo foi aceita (item 4.4: mudanças de escopo devem ser registradas por escrito).
+> **Observação 1:** o grupo tem quatro integrantes; o item 4.1 prevê duplas ou trios, então a composição depende de autorização expressa do professor.
+
+> **Observação 2:** a evolução da v1.0 para a v2.0 (API e persistência) altera o sistema apresentado na proposta. É preciso confirmar com o professor que essa mudança de escopo foi aceita (item 4.4: mudanças de escopo devem ser registradas por escrito).
