@@ -4,7 +4,14 @@
  * Portadas da versão 1.0 (v1.0/index.html, função simulate) sem alteração de comportamento.
  */
 
+function campoVazio(valor) {
+  return valor === undefined || valor === null || String(valor).trim() === '';
+}
+
 function validarEntrada(dados) {
+  if (['idade', 'renda', 'valor'].some((campo) => campoVazio(dados[campo]))) {
+    return { valido: false };
+  }
   const idade = Number(dados.idade);
   const renda = Number(dados.renda);
   const valor = Number(dados.valor);
