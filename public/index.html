@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulador de Empréstimo</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f6f8;margin:0;color:#222}
+header{background:#243447;color:white;padding:20px}
+header h1{margin:0 0 4px}
+header p{margin:0}
+main{max-width:900px;margin:25px auto;background:white;padding:25px;border-radius:10px;box-shadow:0 2px 10px #0002;box-sizing:border-box}
+@media (max-width:940px){main{margin:16px;padding:16px}}
+label{display:block;margin-top:14px;font-weight:bold}
+input,select{width:100%;padding:10px;margin-top:5px;box-sizing:border-box}
+button{margin-top:18px;padding:11px 18px;border:0;border-radius:6px;background:#2463eb;color:white;cursor:pointer}
+button.secondary{background:#666}
+button:disabled{background:#aab;cursor:not-allowed}
+.hidden{display:none}
+#result{margin-top:20px;padding:15px;border-radius:7px;background:#eef3ff}
+.ok{color:#137333;font-weight:bold}.bad{color:#b00020;font-weight:bold}
+.status{padding:8px;background:#eee;border-radius:6px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.status button{margin:0;padding:6px 12px}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+th,td{border-bottom:1px solid #ddd;padding:6px;text-align:left}
+td button{margin:0;padding:4px 10px;background:#b00020}
+.tabela{overflow-x:auto}
+</style>
+</head>
+<body>
+<header><h1>Simulador de Empréstimo</h1><p>Sistema acadêmico para o Projeto P2 de Testes e Qualidade de Software</p></header>
+<main>
+<div id="login">
+  <h2>Login</h2>
+  <form id="formLogin">
+    <label for="user">Usuário</label><input id="user" autocomplete="username">
+    <label for="pass">Senha</label><input id="pass" type="password" autocomplete="current-password">
+    <button id="btnEntrar" type="submit">Entrar</button>
+  </form>
+  <div id="loginMsg" role="alert"></div>
+</div>
+
+<div id="app" class="hidden">
+  <div class="status">
+    <span>Estado atual: <strong id="state">Não autenticado</strong></span>
+    <button id="btnSair" class="secondary" type="button">Sair</button>
+  </div>
+  <h2>Simulação</h2>
+  <form id="formSimulacao">
+    <label for="age">Idade (18 a 60 anos)</label>
+    <input id="age" type="number" min="0">
+    <label for="income">Renda mensal (R$)</label>
+    <input id="income" type="number" min="0" step="0.01">
+    <label for="amount">Valor solicitado (R$)</label>
+    <input id="amount" type="number" min="0" step="0.01">
+    <label for="active">Conta ativa?</label>
+    <select id="active"><option value="sim">Sim</option><option value="nao">Não</option></select>
+    <button id="btnSimular" type="submit">Simular empréstimo</button>
+    <button id="btnFinalizar" class="secondary" type="button">Finalizar</button>
+  </form>
+  <div id="result" class="hidden" role="status"></div>
+
+  <h2>Histórico de simulações</h2>
+  <div class="tabela">
+    <table>
+      <thead><tr><th>#</th><th>Idade</th><th>Renda</th><th>Valor</th><th>Conta</th><th>Resultado</th><th></th></tr></thead>
+      <tbody id="historico"></tbody>
+    </table>
+  </div>
+  <p id="historicoVazio"><small>Nenhuma simulação registrada.</small></p>
+</div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
