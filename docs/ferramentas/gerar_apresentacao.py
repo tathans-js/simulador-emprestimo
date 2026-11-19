@@ -86,7 +86,7 @@ SLIDES = [
     {"titulo": "12. Pipeline CI e análise de qualidade",
      "imagens": [(G("fig4_qualidade.png"), "")],
      "topicos": ["GitHub Actions: push/PR → npm ci → ESLint → unit → API → Postman → Selenium → cobertura → artefatos",
-                 "Falha controlada: commit 1977789 (REPROVADO) → correção: b99bb99 (APROVADO)"]},
+                 "GitHub: falha controlada no ramo demo-pipeline-falha (REPROVADO) → main b34cd5a (APROVADO)", "github.com/tathans-js/simulador-emprestimo"]},
     {"titulo": "13. Conclusão e melhorias",
      "topicos": ["v1.0 não estava apta; v2.1.0 atende aos 15 requisitos no escopo (34/34 manuais, 60/60 automatizados)",
                  "Testar só o caminho feliz (30 anos) não teria encontrado nenhum dos defeitos",

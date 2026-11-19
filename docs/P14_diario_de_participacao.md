@@ -17,7 +17,7 @@ subtitle: "Simulador de Empréstimo – Projeto Integrado P2 – TQS 2026"
 | 19/11/2026 | TDD RF-11 (RED/GREEN/REFACTOR) e versão 2.1.0 | «PREENCHER» | Assistente de IA (apoio) | | commits `a44e590`, `263e841`, `ab1b0f7`, `b99bb99` |
 | 19/11/2026 | Ciclo C2 (reteste/regressão), CT-34, sessão exploratória, métricas e documentos | «PREENCHER» | Assistente de IA (apoio) | | commit `3c50ab2` e seguintes; `docs/` |
 | «PREENCHER» | Execução da aceitação com representante (AC-01 a AC-04) | «PREENCHER» | «representante» | | P09, seção 1.1 |
-| «PREENCHER» | Pipeline executado no GitHub (falha + correção) | «PREENCHER» | | | links no P11 |
+| 19/11/2026 | Repositório publicado, pipeline executado no GitHub (falha de ambiente Node 20 corrigida, falha controlada e execução aprovada) e 5 issues registradas | «PREENCHER» | | | https://github.com/tathans-js/simulador-emprestimo – links no P11 |
 | «PREENCHER» | Revisão final, gravação do vídeo e montagem do Drive | «PREENCHER» | | | pasta 14 e 16 |
 
 # 2. Contribuição de cada integrante
@@ -38,8 +38,8 @@ Distribuição planejada das tarefas que ainda precisam ser feitas (item 4.2). A
 | Tarefa pendente | Responsável | Apoio |
 |---|---|---|
 | Pedir autorização ao professor: grupo de 4 integrantes, mudança v1.0 → v2.0 e ESLint no lugar do SonarQube | Jonathans David da Silva P Jr | todos |
-| Criar o repositório no GitHub e executar o pipeline (falha + correção); registrar os links no P11 | Guilherme de Oliveira Lazari | Pedro Henrique Teixeira Moroni |
-| Abrir as 5 issues no GitHub com o conteúdo do P07 | Lucas Soares de Almeida | Jonathans David da Silva P Jr |
+| ~~Criar o repositório no GitHub e executar o pipeline (falha + correção)~~ – concluído em 19/11/2026 | Guilherme de Oliveira Lazari | Pedro Henrique Teixeira Moroni |
+| ~~Abrir as 5 issues no GitHub com o conteúdo do P07~~ – concluído em 19/11/2026 | Lucas Soares de Almeida | Jonathans David da Silva P Jr |
 | Conduzir a aceitação AC-01 a AC-04 com representante de outro grupo e registrar no P09 | Lucas Soares de Almeida | Guilherme de Oliveira Lazari |
 | Gravar o vídeo de contingência (Demos A, B e C do roteiro) | Pedro Henrique Teixeira Moroni | Guilherme de Oliveira Lazari |
 | Revisar os documentos, atualizar o sumário no Word, preencher o comprovante e subir no Drive | Jonathans David da Silva P Jr | todos |

@@ -9,7 +9,7 @@ Foram registrados 5 defeitos, todos encontrados em execuções reais (ciclos C0 
 
 {{tabela:defeitos_resumo}}
 
-**Ferramenta:** GitHub Issues («PREENCHER: link das issues»). A exportação consolidada está em `P07_defeitos.csv` e `P07_defeitos.xlsx`. Cada issue deve ser criada com o conteúdo abaixo e o rótulo de severidade. O status segue o fluxo Novo → Em análise → Em correção → Pronto para reteste → Encerrado.
+**Ferramenta:** GitHub Issues – https://github.com/tathans-js/simulador-emprestimo/issues?q=is%3Aissue (issues #1 a #5, rótulos `defeito` e `severidade`, encerradas com o comentário de correção e reteste). A exportação consolidada está em `P07_defeitos.csv` e `P07_defeitos.xlsx`. Cada issue deve ser criada com o conteúdo abaixo e o rótulo de severidade. O status segue o fluxo Novo → Em análise → Em correção → Pronto para reteste → Encerrado.
 
 > **Transparência sobre o BUG-001:** o código da v1.0 contém o comentário "BUG INTENCIONAL PARA O EXERCÍCIO DE QA". O defeito foi inserido de propósito pelo autor da v1.0 e não surgiu naturalmente. Ele foi mantido no registro porque existia de fato no código testado, mas a origem fica declarada aqui. Os defeitos BUG-002 a BUG-005 não foram inseridos de propósito: foram encontrados pela execução dos casos.
 

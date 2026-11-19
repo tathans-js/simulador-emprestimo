@@ -1,0 +1,7 @@
+{
+  "repositorio": "https://github.com/tathans-js/simulador-emprestimo",
+  "actions": "https://github.com/tathans-js/simulador-emprestimo/actions",
+  "issues": "https://github.com/tathans-js/simulador-emprestimo/issues?q=is%3Aissue",
+  "pipelineFalha": "https://github.com/tathans-js/simulador-emprestimo/actions/runs/44624141232",
+  "pipelineAprovado": "https://github.com/tathans-js/simulador-emprestimo/actions/runs/44624223998"
+}

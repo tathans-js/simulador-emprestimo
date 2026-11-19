@@ -29,13 +29,13 @@ Bauru – 2026
 |---|---|
 | Turma | Ciência da Computação – Turma B |
 | Integrantes e RA | Jonathans David da Silva P Jr – 23110246; Lucas Soares de Almeida – 23210133; Pedro Henrique Teixeira Moroni – 23110956; Guilherme de Oliveira Lazari – 23110982 |
-| Repositório | «PREENCHER: URL do GitHub» |
-| Pipeline (GitHub Actions) | «PREENCHER: URL /actions» |
-| Defeitos (GitHub Issues) | «PREENCHER: URL /issues» |
+| Repositório | https://github.com/tathans-js/simulador-emprestimo |
+| Pipeline (GitHub Actions) | https://github.com/tathans-js/simulador-emprestimo/actions |
+| Defeitos (GitHub Issues) | https://github.com/tathans-js/simulador-emprestimo/issues?q=is%3Aissue |
 | Vídeo de contingência | «PREENCHER: link ou 14_APRESENTACAO_E_VIDEO_CONTINGENCIA/video.mp4» |
 | Pasta do Drive | P2_TQS_2026_CC-B_SIMULADOR-EMPRESTIMO |
 
-**Declaração de participação:** declaramos que todos os integrantes participaram das etapas descritas e conseguem explicar os documentos e testes produzidos. A contribuição de cada um está no Diário de Participação (P14). Declaramos também que foi usada ferramenta de inteligência artificial (assistente de código) como apoio na automação e na documentação, conforme o item 15 do manual. Todos os resultados vêm de execuções reais e reproduzíveis, e cabe ao grupo revisá-los e validá-los. «PREENCHER/ajustar conforme as orientações do professor sobre uso de IA»
+**Declaração de participação:** declaramos que todos os integrantes participaram das etapas descritas e conseguem explicar os documentos e testes produzidos. A contribuição de cada um está no Diário de Participação (P14). Declaramos também que foi usada ferramenta de inteligência artificial (assistente de código) como apoio na automação e na documentação, conforme o item 15 do manual. Todos os resultados vêm de execuções reais e reproduzíveis, e cabe ao grupo revisá-los e validá-los.
 
 # 1. Introdução
 
@@ -51,7 +51,7 @@ Bauru – 2026
 
 - **Finalidade:** simular a concessão de empréstimo a partir de idade, renda mensal, valor solicitado e situação da conta. O sistema informa aprovação ou negação (com motivos) e mantém um histórico.
 - **Usuários:** analista de crédito (perfil único, usuário fictício `admin`).
-- **Tecnologias:** HTML/CSS/JavaScript; Node.js 20+ (`node:http`); persistência em arquivo JSON.
+- **Tecnologias:** HTML/CSS/JavaScript; Node.js 22+ (`node:http`); persistência em arquivo JSON.
 - **Arquitetura resumida:** a interface (`public/`) faz chamadas REST com token Bearer à API (`src/servidor.js`). A API usa as regras (`src/regras.js`), a autenticação (`src/auth.js`) e o repositório (`src/repositorio.js`), que grava em `data/simulacoes.json`.
 
 | Versão | Descrição | Commit |
@@ -85,7 +85,7 @@ Foram selecionados **15 requisitos**: 11 funcionais e 4 não funcionais. Os iten
 
 **Técnicas:** partição de equivalência, valor limite (2 e 3 valores), tabela de decisão, teste baseado em estados, casos de uso, exceção, segurança básica e exploratório.
 
-**Ambiente:** macOS 26.5, Node.js 24.22.2, Chrome 157, Firefox 160 (local) e Ubuntu com Node 20 no GitHub Actions. Os dados são fictícios e cada teste usa um arquivo de dados temporário.
+**Ambiente:** macOS 26.5, Node.js 24.22.2, Chrome 157, Firefox 160 (local) e Ubuntu com Node 22 no GitHub Actions. Os dados são fictícios e cada teste usa um arquivo de dados temporário.
 
 **Critérios de saída:** 100% dos casos executados; nenhum defeito Alta/Crítica aberto; automação verde; cobertura de requisitos de 100%; cobertura de linhas de pelo menos 85%. **Todos foram atingidos** (seção 10). Plano completo no P03.
 
@@ -218,7 +218,12 @@ Os logs de cada etapa estão em `resultados/tdd/`.
 - **execução com falha** no commit `1977789` (5 falhas unitárias e 2 de interface);
 - **execução aprovada** no commit `b99bb99`.
 
-Os links das execuções no GitHub estão pendentes: «PREENCHER».
+No GitHub Actions:
+
+- **falha controlada** no ramo `demo-pipeline-falha` (código da v2.0.0): https://github.com/tathans-js/simulador-emprestimo/actions/runs/44624710466;
+- **aprovada** no `main` (`b34cd5a`): https://github.com/tathans-js/simulador-emprestimo/actions/runs/44624726112.
+
+O pipeline também revelou uma falha de ambiente: com Node 20, o `node --test` não aceita padrões glob (https://github.com/tathans-js/simulador-emprestimo/actions/runs/44624223998). A correção foi usar Node 22 no pipeline (commit `b34cd5a`).
 
 ![Figura 4 – Análise de qualidade: linha de base x final](gerados/graficos/fig4_qualidade.png)
 
@@ -238,7 +243,7 @@ Os links das execuções no GitHub estão pendentes: «PREENCHER».
 
 - Toda a automação e a documentação foram consolidadas em um curto período, em vez de evoluírem ao longo do semestre.
 - A aceitação ainda não foi feita com um representante externo.
-- O pipeline ainda não foi executado no GitHub.
+- O pipeline só foi publicado no GitHub ao final, e a primeira execução revelou incompatibilidade de ambiente (Node 20).
 - O SonarQube foi substituído por outra ferramenta.
 - O executor assistido torna a execução "manual" mais próxima da automatizada.
 
@@ -266,8 +271,7 @@ A versão 1.0 original **não estava apta**: rejeitava clientes de 18 e 60 anos,
 **Prontidão:** a versão 2.1.0 está **apta para uso em ambiente acadêmico/demonstração**, condicionada a:
 
 1. aceitação pelo representante do usuário (AC-01 a AC-04);
-2. execução do pipeline no GitHub;
-3. tratamento das melhorias M-02 e M-06 antes de qualquer uso com dados reais.
+2. tratamento das melhorias M-02 e M-06 antes de qualquer uso com dados reais.
 
 O projeto mostrou na prática que testar só o caminho feliz é insuficiente: os defeitos estavam nas fronteiras, nas exceções e nos estados.
 

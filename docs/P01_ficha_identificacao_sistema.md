@@ -12,9 +12,9 @@ subtitle: "Projeto Integrado P2 – Testes e Qualidade de Software – UNISAGRAD
 | Nome do sistema | Simulador de Empréstimo |
 | Versão testada | 2.1.0 (linha de base: 1.0) |
 | Origem do sistema | Sistema acadêmico desenvolvido pelo grupo. A versão 1.0 (página única) foi evoluída para a 2.0 (cliente + API REST + persistência) para atender ao item 5.3 do manual. |
-| Link do repositório | «PREENCHER: URL do GitHub» |
+| Link do repositório | https://github.com/tathans-js/simulador-emprestimo |
 | Licença/autorização | Código próprio do grupo, para uso acadêmico (sem terceiros envolvidos). |
-| Tecnologias principais | HTML/CSS/JavaScript; Node.js 20+ (`node:http`); persistência em arquivo JSON; `node:test`, Postman/Newman, Selenium WebDriver, ESLint, GitHub Actions. |
+| Tecnologias principais | HTML/CSS/JavaScript; Node.js 22+ (`node:http`); persistência em arquivo JSON; `node:test`, Postman/Newman, Selenium WebDriver, ESLint, GitHub Actions. |
 | Como executar | `npm ci` e `npm start` → http://localhost:3000 (detalhes no README). |
 | Fluxos selecionados | (1) Login/autenticação; (2) Simulação de empréstimo com decisão e motivos; (3) Consulta do histórico persistido; (4) Exclusão de simulação; (5) Finalização da simulação (estados); (6) Encerrar sessão. Formulários: login e simulação. |
 | Integrações existentes | Interface ⇄ API REST (fetch/JSON com token Bearer); API ⇄ módulo de regras; API ⇄ repositório ⇄ arquivo JSON. |

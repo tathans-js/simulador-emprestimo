@@ -23,14 +23,14 @@ Turma: Ciência da Computação – Turma B
 
 ## 3. Link do repositório
 
-«PREENCHER: https://github.com/USUARIO/simulador-emprestimo» (ver seção 11 para publicar).
+https://github.com/tathans-js/simulador-emprestimo
 
 ## 4. Tecnologias
 
 | Camada | Tecnologia |
 |---|---|
 | Interface | HTML5, CSS, JavaScript (navegador) |
-| Servidor/API | Node.js 20+ (`node:http`, sem dependências de execução) |
+| Servidor/API | Node.js 22+ (`node:http`, sem dependências de execução) |
 | Persistência | Arquivo JSON (`data/simulacoes.json`), escrita atômica |
 | Testes unitários e de integração | `node:test` (framework de testes nativo do Node.js, equivalente ao JUnit) |
 | Testes de API | Postman (coleção v2.1) executada pelo Newman |
@@ -43,7 +43,7 @@ Arquitetura: `navegador (public/)` ⇄ `API REST (src/servidor.js)` ⇄ `regras 
 
 ## 5. Pré-requisitos
 
-- Node.js 20 ou superior (testado com 24.22.2) e npm.
+- Node.js 22 ou superior (testado com 24.22.2; o `node --test` com padrões glob exige Node 21+) e npm.
 - Google Chrome (e Mozilla Firefox para o teste de compatibilidade NF-04).
 - Git.
 - Opcional, apenas para regenerar documentos: Python 3.9+.
@@ -100,16 +100,17 @@ Os resultados ficam em `resultados/`: execuções C0–C2 com capturas, logs de 
 
 ## 11. Acesso ao pipeline
 
-O arquivo é `.github/workflows/ci.yml`. Ele roda em todo push e pull request: prepara o Node 20, roda `npm ci`, o ESLint, os testes unitários, de API, o Postman e o Selenium, mede a cobertura e publica os resultados como artefato.
-Link: «PREENCHER: https://github.com/USUARIO/simulador-emprestimo/actions».
+O arquivo é `.github/workflows/ci.yml`. Ele roda em todo push e pull request: prepara o Node 22, roda `npm ci`, o ESLint, os testes unitários, de API, o Postman e o Selenium, mede a cobertura e publica os resultados como artefato.
+Link: https://github.com/tathans-js/simulador-emprestimo/actions
 
-Para registrar no GitHub uma execução **com falha** seguida da **correção** (exigência do item 9.15):
+Execuções registradas (item 9.15):
 
-```bash
-git remote add origin «URL-DO-REPOSITÓRIO»
-git push origin 1977789:refs/heads/main   # pipeline com falha (BUG-001/002/003)
-git push origin main                       # pipeline aprovado após as correções
-```
+| Execução | Ramo / commit | Resultado | Link |
+|---|---|---|---|
+| Falha controlada (código da v2.0.0, com BUG-001/002) | `demo-pipeline-falha` / `fafbc13` | Reprovado na etapa "Testes unitários" | https://github.com/tathans-js/simulador-emprestimo/actions/runs/44624710466 |
+| Aprovada (versão 2.1.0) | `main` / `b34cd5a` | Aprovado | https://github.com/tathans-js/simulador-emprestimo/actions/runs/44624726112 |
+
+O ramo `demo-pipeline-falha` contém o código do commit `1977789` com apenas o pipeline atualizado para Node 22. Os scripts `scripts/publicar_github.sh` e `scripts/criar_issues.js` publicaram o repositório e as issues.
 
 ## 12. Localização dos documentos
 
@@ -118,7 +119,7 @@ git push origin main                       # pipeline aprovado após as correç�
 | P01–P03, P07, P09–P14 (DOCX/PDF) | `docs/` (fonte .md) e `docs/gerados/documentos/` (DOCX/PDF gerados) |
 | Planilhas (P02, P04–P07, P10) | `docs/gerados/*.xlsx` |
 | Evidências de execução manual | `resultados/execucoes/C0`, `C1`, `C2` |
-| Defeitos | `docs/dados/defeitos.json`, `docs/gerados/P07_defeitos.*` |
+| Defeitos | GitHub Issues: https://github.com/tathans-js/simulador-emprestimo/issues?q=is%3Aissue; `docs/dados/defeitos.json`, `docs/gerados/P07_defeitos.*` |
 | TDD | `resultados/tdd/` e commits `a44e590` → `263e841` → `ab1b0f7` |
 | Pipeline | `.github/workflows/ci.yml`, `resultados/pipeline/` |
 

@@ -8,7 +8,7 @@ subtitle: "Testes e Qualidade de Software – UNISAGRADO 2026"
 | Pasta | P2_TQS_2026_CC-B_SIMULADOR-EMPRESTIMO |
 | Data e hora da entrega | «PREENCHER: dd/mm/aaaa hh:mm» |
 | Integrantes | Jonathans David da Silva P Jr (23110246); Lucas Soares de Almeida (23210133); Pedro Henrique Teixeira Moroni (23110956); Guilherme de Oliveira Lazari (23110982) |
-| Repositório | «PREENCHER» |
+| Repositório | https://github.com/tathans-js/simulador-emprestimo |
 
 # Checklist final do grupo (item 16)
 

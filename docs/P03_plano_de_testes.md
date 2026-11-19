@@ -5,7 +5,7 @@ subtitle: "Simulador de Empréstimo 2.1.0 – Projeto Integrado P2 – TQS 2026"
 
 # 1. Identificação e versão do sistema
 
-Simulador de Empréstimo. Versão de linha de base: 1.0 (página única, `v1.0/index.html`). Versões testadas: 2.0.0 (commit `1977789`, antes das correções) e 2.1.0 (commit `b99bb99`, após as correções e o TDD). Repositório: «PREENCHER».
+Simulador de Empréstimo. Versão de linha de base: 1.0 (página única, `v1.0/index.html`). Versões testadas: 2.0.0 (commit `1977789`, antes das correções) e 2.1.0 (commit `b99bb99`, após as correções e o TDD). Repositório: https://github.com/tathans-js/simulador-emprestimo.
 
 # 2. Objetivo
 
@@ -56,10 +56,10 @@ Tipos: funcional, regressão, reteste, segurança básica, desempenho básico, c
 # 7. Ambiente e ferramentas
 
 - **Sistema operacional:** macOS 26.5 (estação local). No CI: Ubuntu (GitHub Actions).
-- **Runtime:** Node.js 24.22.2 local e Node.js 20 no CI.
+- **Runtime:** Node.js 24.22.2 local e Node.js 22 no CI.
 - **Navegadores:** Google Chrome 157 e Mozilla Firefox 160, em modo headless nos testes automatizados.
 - **Ferramentas:** Git/GitHub, VS Code, `node:test`, Selenium WebDriver 4, Postman/Newman 6, ESLint 9, GitHub Actions, planilhas XLSX e Python 3.9 para gerar os documentos.
-- **Gestão de defeitos:** GitHub Issues («PREENCHER: link»), com exportação em `docs/gerados/P07_defeitos.csv`.
+- **Gestão de defeitos:** GitHub Issues (https://github.com/tathans-js/simulador-emprestimo/issues?q=is%3Aissue), com exportação em `docs/gerados/P07_defeitos.csv`.
 
 # 8. Responsabilidades
 
