@@ -1,6 +1,6 @@
 {
   "name": "simulador-emprestimo",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Simulador de Empréstimo - sistema-alvo do Projeto P2 de Testes e Qualidade de Software",
   "private": true,
   "main": "src/servidor.js",
