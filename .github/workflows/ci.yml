@@ -1,0 +1,60 @@
+name: CI - Simulador de Empréstimo
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Obter código
+        uses: actions/checkout@v4
+
+      - name: Preparar Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Análise estática (ESLint)
+        run: npx eslint src public -f json -o resultados/eslint.json || true
+
+      - name: Testes unitários
+        run: node --test --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=resultados/junit-unit.xml "tests/unit/**/*.test.js"
+
+      - name: Testes de integração (API)
+        run: node --test --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=resultados/junit-api.xml "tests/api/**/*.test.js"
+
+      - name: Testes de integração (coleção Postman via Newman)
+        run: npm run test:postman
+
+      - name: Testes de sistema (Selenium + Chrome headless)
+        run: node --test --test-concurrency=1 --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=resultados/junit-e2e.xml "tests/e2e/**/*.test.js"
+
+      - name: Cobertura de código
+        if: always()
+        run: npm run coverage > resultados/cobertura.txt 2>&1 || true
+
+      - name: Publicar resultados
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultados-testes
+          path: resultados/
+
+      - name: Resumo no GitHub
+        if: always()
+        run: |
+          echo "## Resultado dos testes" >> "$GITHUB_STEP_SUMMARY"
+          for f in resultados/junit-*.xml; do
+            [ -f "$f" ] || continue
+            t=$(grep -o 'tests="[0-9]*"' "$f" | head -1); fl=$(grep -o 'failures="[0-9]*"' "$f" | head -1)
+            echo "- $(basename "$f"): $t $fl" >> "$GITHUB_STEP_SUMMARY"
+          done

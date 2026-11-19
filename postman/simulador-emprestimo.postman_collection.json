@@ -1,0 +1,490 @@
+{
+  "info": {
+    "name": "Simulador de Empréstimo - API (P2 TQS)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Testes de integração da API REST. Rastreabilidade: cada requisição indica requisito (RF/RNF) e caso."
+  },
+  "item": [
+    {
+      "name": "PM-01 [RNF-04] Saúde do serviço",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status 200',()=>pm.response.to.have.status(200));",
+              "pm.test('status ok',()=>pm.expect(pm.response.json().status).to.eql('ok'));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/saude",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "saude"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PM-02 [RF-01/CT-02] Login inválido",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status 401',()=>pm.response.to.have.status(401));",
+              "pm.test('mensagem de erro',()=>pm.expect(pm.response.json().erro).to.eql('Login ou senha inválidos.'));",
+              "pm.test('sem token',()=>pm.expect(pm.response.json()).to.not.have.property('token'));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"usuario\": \"{{usuario}}\",\n  \"senha\": \"senhaerrada\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "login"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PM-03 [RF-01/CT-01] Login válido",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status 200',()=>pm.response.to.have.status(200));",
+              "const j=pm.response.json();",
+              "pm.test('token hexadecimal de 48 caracteres',()=>pm.expect(j.token).to.match(/^[0-9a-f]{48}$/));",
+              "pm.collectionVariables.set('token', j.token);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"usuario\": \"{{usuario}}\",\n  \"senha\": \"{{senha}}\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "login"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PM-04 [RNF-03/CT-33] Criar simulação sem token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status 401',()=>pm.response.to.have.status(401));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"idade\": 30,\n  \"renda\": 5000,\n  \"valor\": 1000,\n  \"conta\": \"sim\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/simulacoes",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "simulacoes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PM-05 [RF-05/RF-08/CT-06] Criar simulação aprovada",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status 201',()=>pm.response.to.have.status(201));",
+              "const j=pm.response.json();",
+              "pm.test('resultado APROVADO',()=>pm.expect(j.resultado).to.eql('APROVADO'));",
+              "pm.test('contrato básico',()=>{pm.expect(j.id).to.be.a('number');pm.expect(j.criadoEm).to.be.a('string');pm.expect(j.idade).to.eql(30);});",
+              "pm.test('tempo de resposta < 500 ms',()=>pm.expect(pm.response.responseTime).to.be.below(500));",
+              "pm.collectionVariables.set('simId', j.id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"idade\": 30,\n  \"renda\": 5000,\n  \"valor\": 1000,\n  \"conta\": \"sim\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/simulacoes",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "simulacoes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PM-06 [RF-04/CT-16] Criar simulação com conta inativa",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status 201',()=>pm.response.to.have.status(201));",
+              "pm.test('resultado NEGADO',()=>pm.expect(pm.response.json().resultado).to.eql('NEGADO'));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"idade\": 30,\n  \"renda\": 5000,\n  \"valor\": 1000,\n  \"conta\": \"nao\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/simulacoes",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "simulacoes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PM-07 [RF-07/CT-20] Criar simulação com valor negativo",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status 400',()=>pm.response.to.have.status(400));",
+              "pm.test('mensagem Dados inválidos.',()=>pm.expect(pm.response.json().erro).to.eql('Dados inválidos.'));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"idade\": 30,\n  \"renda\": 5000,\n  \"valor\": -100,\n  \"conta\": \"sim\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/simulacoes",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "simulacoes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PM-08 [RF-08/CT-29] Listar histórico",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status 200',()=>pm.response.to.have.status(200));",
+              "const lista=pm.response.json();",
+              "pm.test('é uma lista',()=>pm.expect(lista).to.be.an('array'));",
+              "pm.test('contém a simulação criada',()=>pm.expect(lista.map(s=>s.id)).to.include(Number(pm.collectionVariables.get('simId'))));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/simulacoes",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "simulacoes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PM-09 [RF-09/CT-31] Excluir simulação",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status 204',()=>pm.response.to.have.status(204));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/simulacoes/{{simId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "simulacoes",
+            "{{simId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PM-10 [RF-09] Excluir simulação já excluída",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status 404',()=>pm.response.to.have.status(404));",
+              "pm.test('mensagem',()=>pm.expect(pm.response.json().erro).to.eql('Simulação não encontrada.'));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/simulacoes/{{simId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "simulacoes",
+            "{{simId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PM-11 [RF-10/CT-32] Logout",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status 204',()=>pm.response.to.have.status(204));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/logout",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "logout"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PM-12 [RF-10/RNF-03] Listar após logout",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status 401',()=>pm.response.to.have.status(401));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/simulacoes",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "simulacoes"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "simId",
+      "value": ""
+    }
+  ]
+}
