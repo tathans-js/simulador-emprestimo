@@ -16,7 +16,7 @@ function validarEntrada(dados) {
 }
 
 function idadeValida(idade) {
-  return idade > 18 && idade < 60;
+  return idade >= 18 && idade <= 60;
 }
 
 function rendaSuficiente(renda, valor) {
