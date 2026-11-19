@@ -7,7 +7,7 @@ subtitle: "Projeto Integrado P2 – Testes e Qualidade de Software – UNISAGRAD
 
 | Campo | Preenchimento do grupo |
 |---|---|
-| Turma e grupo | «PREENCHER: turma» – «PREENCHER: GRUPOXX» |
+| Turma | Ciência da Computação – Turma B |
 | Integrantes | Jonathans David da Silva P Jr (RA 23110246); Lucas Soares de Almeida (RA 23210133); Pedro Henrique Teixeira Moroni (RA 23110956); Guilherme de Oliveira Lazari (RA 23110982) |
 | Nome do sistema | Simulador de Empréstimo |
 | Versão testada | 2.1.0 (linha de base: 1.0) |

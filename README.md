@@ -15,7 +15,7 @@ UNISAGRADO · Ciência da Computação · Testes e Qualidade de Software · Prof
 
 > O manual (item 4.1) prevê duplas ou trios. Um grupo de quatro integrantes depende de autorização expressa do professor.
 
-Turma: «PREENCHER» · Grupo: «PREENCHER: GRUPOXX»
+Turma: Ciência da Computação – Turma B
 
 ## 2. Nome e versão do sistema
 

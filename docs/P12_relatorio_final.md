@@ -27,13 +27,13 @@ Bauru – 2026
 
 | Item | Informação |
 |---|---|
-| Turma / grupo | «PREENCHER» / «PREENCHER: GRUPOXX» |
+| Turma | Ciência da Computação – Turma B |
 | Integrantes e RA | Jonathans David da Silva P Jr – 23110246; Lucas Soares de Almeida – 23210133; Pedro Henrique Teixeira Moroni – 23110956; Guilherme de Oliveira Lazari – 23110982 |
 | Repositório | «PREENCHER: URL do GitHub» |
 | Pipeline (GitHub Actions) | «PREENCHER: URL /actions» |
 | Defeitos (GitHub Issues) | «PREENCHER: URL /issues» |
 | Vídeo de contingência | «PREENCHER: link ou 14_APRESENTACAO_E_VIDEO_CONTINGENCIA/video.mp4» |
-| Pasta do Drive | P2_TQS_2026_«TURMA»_GRUPO«XX»_SIMULADOR-EMPRESTIMO |
+| Pasta do Drive | P2_TQS_2026_CC-B_SIMULADOR-EMPRESTIMO |
 
 **Declaração de participação:** declaramos que todos os integrantes participaram das etapas descritas e conseguem explicar os documentos e testes produzidos. A contribuição de cada um está no Diário de Participação (P14). Declaramos também que foi usada ferramenta de inteligência artificial (assistente de código) como apoio na automação e na documentação, conforme o item 15 do manual. Todos os resultados vêm de execuções reais e reproduzíveis, e cabe ao grupo revisá-los e validá-los. «PREENCHER/ajustar conforme as orientações do professor sobre uso de IA»
 

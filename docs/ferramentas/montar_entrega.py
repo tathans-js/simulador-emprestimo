@@ -1,8 +1,8 @@
 """
 Monta a pasta de entrega do Google Drive com a estrutura obrigatória 00–16 (item 11.3).
 
-Uso:  python docs/ferramentas/montar_entrega.py [pasta_destino] [TURMA] [GRUPOXX]
-Padrão: ../entrega/P2_TQS_2026_TURMA_GRUPOXX_SIMULADOR-EMPRESTIMO
+Uso:  python docs/ferramentas/montar_entrega.py [pasta_destino] [TURMA] [GRUPO (opcional)]
+Padrão: ../entrega/P2_TQS_2026_CC-B_SIMULADOR-EMPRESTIMO
 """
 import os
 import shutil
@@ -10,10 +10,10 @@ import subprocess
 import sys
 
 RAIZ = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-turma = sys.argv[2] if len(sys.argv) > 2 else "TURMA"
-grupo = sys.argv[3] if len(sys.argv) > 3 else "GRUPOXX"
+turma = sys.argv[2] if len(sys.argv) > 2 else "CC-B"
+grupo = sys.argv[3] if len(sys.argv) > 3 else ""
 base = sys.argv[1] if len(sys.argv) > 1 else os.path.join(RAIZ, "..", "entrega")
-DEST = os.path.abspath(os.path.join(base, f"P2_TQS_2026_{turma}_{grupo}_SIMULADOR-EMPRESTIMO"))
+DEST = os.path.abspath(os.path.join(base, "_".join(x for x in ("P2_TQS_2026", turma, grupo, "SIMULADOR-EMPRESTIMO") if x)))
 DOC = os.path.join(RAIZ, "docs", "gerados", "documentos")
 GER = os.path.join(RAIZ, "docs", "gerados")
 
