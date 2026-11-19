@@ -1,0 +1,573 @@
+[
+  {
+    "execucao": "EX-C0-01",
+    "caso": "CT-01",
+    "titulo": "Login com credenciais válidas",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:40",
+    "esperado": {
+      "telaSimulacao": "visível",
+      "estado": "Autenticado"
+    },
+    "obtido": {
+      "telaSimulacao": "visível",
+      "estado": "Autenticado"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-01.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-02",
+    "caso": "CT-02",
+    "titulo": "Login com senha incorreta",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:42",
+    "esperado": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "obtido": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-02.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-03",
+    "caso": "CT-03",
+    "titulo": "Login com usuário inexistente",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:42",
+    "esperado": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "obtido": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-03.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-04",
+    "caso": "CT-04",
+    "titulo": "Login com campos vazios",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:42",
+    "esperado": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "obtido": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-04.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-05",
+    "caso": "CT-05",
+    "titulo": "Login sensível a maiúsculas (Admin)",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:42",
+    "esperado": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "obtido": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-05.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-06",
+    "caso": "CT-06",
+    "titulo": "Idade 30 – partição válida",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:42",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-06.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-07",
+    "caso": "CT-07",
+    "titulo": "Idade 17 – abaixo do limite inferior",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:43",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-07.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-08",
+    "caso": "CT-08",
+    "titulo": "Idade 18 – limite inferior inclusivo",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:43",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Reprovado",
+    "evidencia": "resultados/execucoes/C0/CT-08.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-09",
+    "caso": "CT-09",
+    "titulo": "Idade 60 – limite superior inclusivo",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:44",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Reprovado",
+    "evidencia": "resultados/execucoes/C0/CT-09.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-10",
+    "caso": "CT-10",
+    "titulo": "Idade 61 – acima do limite superior",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:45",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-10.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-11",
+    "caso": "CT-11",
+    "titulo": "Idade 19 – logo acima do limite inferior",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:45",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-11.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-12",
+    "caso": "CT-12",
+    "titulo": "Idade 59 – logo abaixo do limite superior",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:46",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-12.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-13",
+    "caso": "CT-13",
+    "titulo": "Renda exatamente 5x o valor",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:47",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-13.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-14",
+    "caso": "CT-14",
+    "titulo": "Renda 1 centavo abaixo de 5x",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:48",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-14.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-15",
+    "caso": "CT-15",
+    "titulo": "Renda 2x o valor – partição inválida",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:48",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-15.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-16",
+    "caso": "CT-16",
+    "titulo": "Conta inativa com demais dados válidos",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:49",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-16.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-17",
+    "caso": "CT-17",
+    "titulo": "Nenhuma condição atendida",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:50",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-17.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-18",
+    "caso": "CT-18",
+    "titulo": "Idade e renda inválidas com conta ativa",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:50",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-18.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-19",
+    "caso": "CT-19",
+    "titulo": "Valor solicitado igual a zero",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:51",
+    "esperado": {
+      "resultado": "Dados inválidos."
+    },
+    "obtido": {
+      "resultado": "Dados inválidos."
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-19.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-20",
+    "caso": "CT-20",
+    "titulo": "Valor solicitado negativo",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:52",
+    "esperado": {
+      "resultado": "Dados inválidos."
+    },
+    "obtido": {
+      "resultado": "Dados inválidos."
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-20.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-21",
+    "caso": "CT-21",
+    "titulo": "Idade em branco",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:52",
+    "esperado": {
+      "resultado": "Dados inválidos."
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Reprovado",
+    "evidencia": "resultados/execucoes/C0/CT-21.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-22",
+    "caso": "CT-22",
+    "titulo": "Renda em branco",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:53",
+    "esperado": {
+      "resultado": "Dados inválidos."
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Reprovado",
+    "evidencia": "resultados/execucoes/C0/CT-22.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-23",
+    "caso": "CT-23",
+    "titulo": "Renda negativa",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:54",
+    "esperado": {
+      "resultado": "Dados inválidos."
+    },
+    "obtido": {
+      "resultado": "Dados inválidos."
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-23.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-24",
+    "caso": "CT-24",
+    "titulo": "Dados inválidos não alteram o estado",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:54",
+    "esperado": {
+      "resultado": "Dados inválidos.",
+      "estado": "Autenticado"
+    },
+    "obtido": {
+      "resultado": "Dados inválidos.",
+      "estado": "Autenticado"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-24.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-25",
+    "caso": "CT-25",
+    "titulo": "Transição Autenticado → Em Simulação",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:55",
+    "esperado": {
+      "estado": "Em Simulação"
+    },
+    "obtido": {
+      "estado": "Em Simulação"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-25.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-26",
+    "caso": "CT-26",
+    "titulo": "Transição Em Simulação → Finalizado",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:56",
+    "esperado": {
+      "estado": "Finalizado",
+      "resultado": "Simulação finalizada."
+    },
+    "obtido": {
+      "estado": "Finalizado",
+      "resultado": "Simulação finalizada."
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C0/CT-26.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-27",
+    "caso": "CT-27",
+    "titulo": "Finalizar sem ter simulado (transição inválida)",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:56",
+    "esperado": {
+      "estado": "Autenticado"
+    },
+    "obtido": {
+      "estado": "Finalizado"
+    },
+    "resultado": "Reprovado",
+    "evidencia": "resultados/execucoes/C0/CT-27.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-28",
+    "caso": "CT-28",
+    "titulo": "Simular após Finalizado (transição inválida)",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:57",
+    "esperado": {
+      "estado": "Finalizado"
+    },
+    "obtido": {
+      "estado": "Em Simulação"
+    },
+    "resultado": "Reprovado",
+    "evidencia": "resultados/execucoes/C0/CT-28.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C0-29",
+    "caso": "CT-29",
+    "titulo": "Simulação registrada no histórico",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:58",
+    "esperado": {
+      "linhasHistorico": "1",
+      "ultimaLinha": "APROVADO"
+    },
+    "obtido": {},
+    "resultado": "Não executado",
+    "evidencia": null,
+    "observacao": "Funcionalidade inexistente na versão 1.0."
+  },
+  {
+    "execucao": "EX-C0-30",
+    "caso": "CT-30",
+    "titulo": "Histórico persiste após recarregar a página e reiniciar o servidor",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:58",
+    "esperado": {
+      "linhasHistorico": "2"
+    },
+    "obtido": {},
+    "resultado": "Não executado",
+    "evidencia": null,
+    "observacao": "Funcionalidade inexistente na versão 1.0."
+  },
+  {
+    "execucao": "EX-C0-31",
+    "caso": "CT-31",
+    "titulo": "Excluir simulação do histórico",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:58",
+    "esperado": {
+      "linhasHistorico": "0",
+      "mensagemVazio": "Nenhuma simulação registrada."
+    },
+    "obtido": {},
+    "resultado": "Não executado",
+    "evidencia": null,
+    "observacao": "Funcionalidade inexistente na versão 1.0."
+  },
+  {
+    "execucao": "EX-C0-32",
+    "caso": "CT-32",
+    "titulo": "Sair encerra a sessão",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:58",
+    "esperado": {
+      "telaLogin": "visível",
+      "estado": "Não autenticado",
+      "telaSimulacaoAposRecarregar": "oculta"
+    },
+    "obtido": {},
+    "resultado": "Não executado",
+    "evidencia": null,
+    "observacao": "Funcionalidade inexistente na versão 1.0."
+  },
+  {
+    "execucao": "EX-C0-33",
+    "caso": "CT-33",
+    "titulo": "Simulação sem autenticação (tela exibida via DevTools)",
+    "ciclo": "C0",
+    "versao": "1.0 (v1.0/index.html)",
+    "dataHora": "19/11/2026, 18:02:58",
+    "esperado": {
+      "simulacaoProcessada": "não"
+    },
+    "obtido": {
+      "simulacaoProcessada": "sim"
+    },
+    "resultado": "Reprovado",
+    "evidencia": "resultados/execucoes/C0/CT-33.png",
+    "observacao": ""
+  }
+]

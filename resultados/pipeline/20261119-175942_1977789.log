@@ -1,0 +1,317 @@
+Pipeline local - 19/11/2026 17:59:42
+Commit: 1977789 test: suítes unitária, integração/API, Postman, Selenium, não funcionais e pipeline CI
+Node: v24.22.2
+::: Instalar dependências
+npm warn deprecated har-validator@5.1.5: this library is no longer supported
+npm warn deprecated uuid@3.4.0: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+npm warn deprecated uuid@8.3.2: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+npm warn deprecated @faker-js/faker@5.5.3: Please update to a newer version.
+
+added 242 packages in 2s
+    OK
+::: Análise estática (ESLint)
+    OK
+::: Testes unitários
+✔ UT-01 [RF-02/CT-06] idade 30 (partição válida) é aceita (0.498167ms)
+✔ UT-02 [RF-02/CT-07] idade 17 (abaixo do limite) é rejeitada (0.064667ms)
+✖ UT-03 [RF-02/CT-08] idade 18 (limite inferior inclusivo) é aceita (0.627333ms)
+✖ UT-04 [RF-02/CT-09] idade 60 (limite superior inclusivo) é aceita (0.108958ms)
+✔ UT-05 [RF-02/CT-10] idade 61 (acima do limite) é rejeitada (0.0605ms)
+✔ UT-06 [RF-03/CT-13] renda exatamente 5x o valor é suficiente (0.050375ms)
+✔ UT-07 [RF-03/CT-14] renda 1 centavo abaixo de 5x é insuficiente (0.057292ms)
+✔ UT-08 [RF-04/CT-16] conta "nao" é considerada inativa (0.052958ms)
+✔ UT-09 [RF-05/CT-06] todas as condições atendidas resultam em APROVADO (0.110333ms)
+✔ UT-10 [RF-05/CT-17] nenhuma condição atendida resulta em NEGADO (0.111042ms)
+✔ UT-11 [RF-07/CT-19] valor solicitado zero é dado inválido (0.063166ms)
+✔ UT-12 [RF-07/CT-20] valor solicitado negativo é dado inválido (0.048541ms)
+✖ UT-13 [RF-07/CT-21] idade em branco é dado inválido (não pode virar zero) (0.079708ms)
+✖ UT-14 [RF-07/CT-22] renda em branco é dado inválido (não pode virar zero) (0.0705ms)
+✖ UT-15 [RF-07] campo ausente (null) é dado inválido (0.074667ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 10
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 58.219417
+
+✖ failing tests:
+
+test at tests/unit/regras.test.js:20:1
+✖ UT-03 [RF-02/CT-08] idade 18 (limite inferior inclusivo) é aceita (0.627333ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (./tests/unit/regras.test.js:21:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/unit/regras.test.js:24:1
+✖ UT-04 [RF-02/CT-09] idade 60 (limite superior inclusivo) é aceita (0.108958ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (./tests/unit/regras.test.js:25:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/unit/regras.test.js:61:1
+✖ UT-13 [RF-07/CT-21] idade em branco é dado inválido (não pode virar zero) (0.079708ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (./tests/unit/regras.test.js:62:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/unit/regras.test.js:65:1
+✖ UT-14 [RF-07/CT-22] renda em branco é dado inválido (não pode virar zero) (0.0705ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (./tests/unit/regras.test.js:66:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/unit/regras.test.js:69:1
+✖ UT-15 [RF-07] campo ausente (null) é dado inválido (0.074667ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (./tests/unit/regras.test.js:70:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+    FALHOU
+::: Testes de integração (API)
+✔ IT-01 [RF-01] login com credenciais válidas retorna 200 e token (29.644625ms)
+✔ IT-02 [RF-01] login com senha inválida retorna 401 e mensagem de erro (1.778833ms)
+✔ IT-03 [RNF-03] criar simulação sem token retorna 401 (1.199959ms)
+✔ IT-04 [RF-05/RF-08] simulação válida retorna 201, APROVADO e fica persistida (3.822875ms)
+✔ IT-05 [RF-04/RF-05] conta inativa retorna 201 com NEGADO (2.59475ms)
+✔ IT-06 [RF-07] dados inválidos retornam 400 e não são persistidos (4.508375ms)
+✔ IT-07 [RF-09] excluir simulação existente retorna 204 e remove do histórico (2.680041ms)
+✔ IT-08 [RF-09] excluir simulação inexistente retorna 404 (1.634333ms)
+✔ IT-09 [RF-10] após logout o token deixa de ser aceito (1.051416ms)
+✔ IT-10 [RNF-04] dados persistem após reinício do servidor (4.9995ms)
+✔ IT-11 [RF-07] JSON malformado retorna 400 (3.805292ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 122.322625
+    OK
+::: Testes de integração (Postman/Newman)
+(node:65890) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+newman
+
+Simulador de Empréstimo - API (P2 TQS)
+
+→ PM-01 [RNF-04] Saúde do serviço
+  GET http://127.0.0.1:61885/api/saude [200 OK, 193B, 16ms]
+  ✓  status 200
+  ✓  status ok
+
+→ PM-02 [RF-01/CT-02] Login inválido
+  POST http://127.0.0.1:61885/api/login [401 Unauthorized, 225B, 2ms]
+  ✓  status 401
+  ✓  mensagem de erro
+  ✓  sem token
+
+→ PM-03 [RF-01/CT-01] Login válido
+  POST http://127.0.0.1:61885/api/login [200 OK, 256B, 1ms]
+  ✓  status 200
+  ✓  token hexadecimal de 48 caracteres
+
+→ PM-04 [RNF-03/CT-33] Criar simulação sem token
+  POST http://127.0.0.1:61885/api/simulacoes [401 Unauthorized, 229B, 1ms]
+  ✓  status 401
+
+→ PM-05 [RF-05/RF-08/CT-06] Criar simulação aprovada
+  POST http://127.0.0.1:61885/api/simulacoes [201 Created, 303B, 1ms]
+  ✓  status 201
+  ✓  resultado APROVADO
+  ✓  contrato básico
+  ✓  tempo de resposta < 500 ms
+
+→ PM-06 [RF-04/CT-16] Criar simulação com conta inativa
+  POST http://127.0.0.1:61885/api/simulacoes [201 Created, 301B, 1ms]
+  ✓  status 201
+  ✓  resultado NEGADO
+
+→ PM-07 [RF-07/CT-20] Criar simulação com valor negativo
+  POST http://127.0.0.1:61885/api/simulacoes [400 Bad Request, 215B, 1ms]
+  ✓  status 400
+  ✓  mensagem Dados inválidos.
+
+→ PM-08 [RF-08/CT-29] Listar histórico
+  GET http://127.0.0.1:61885/api/simulacoes [200 OK, 419B, 1ms]
+  ✓  status 200
+  ✓  é uma lista
+  ✓  contém a simulação criada
+
+→ PM-09 [RF-09/CT-31] Excluir simulação
+  DELETE http://127.0.0.1:61885/api/simulacoes/1 [204 No Content, 158B, 1ms]
+  ✓  status 204
+
+→ PM-10 [RF-09] Excluir simulação já excluída
+  DELETE http://127.0.0.1:61885/api/simulacoes/1 [404 Not Found, 224B, 1ms]
+  ✓  status 404
+  ✓  mensagem
+
+→ PM-11 [RF-10/CT-32] Logout
+  POST http://127.0.0.1:61885/api/logout [204 No Content, 158B, 1ms]
+  ✓  status 204
+
+→ PM-12 [RF-10/RNF-03] Listar após logout
+  GET http://127.0.0.1:61885/api/simulacoes [401 Unauthorized, 229B, 1ms]
+  ✓  status 401
+
+┌─────────────────────────┬─────────────────┬─────────────────┐
+│                         │        executed │          failed │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│              iterations │               1 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│                requests │              12 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│            test-scripts │              12 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│      prerequest-scripts │               0 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│              assertions │              24 │               0 │
+├─────────────────────────┴─────────────────┴─────────────────┤
+│ total run duration: 161ms                                   │
+├─────────────────────────────────────────────────────────────┤
+│ total data received: 758B (approx)                          │
+├─────────────────────────────────────────────────────────────┤
+│ average response time: 2ms [min: 1ms, max: 16ms, s.d.: 4ms] │
+└─────────────────────────────────────────────────────────────┘
+    OK
+::: Testes de sistema (Selenium)
+▶ Fluxos ponta a ponta (Selenium)
+  ✔ E2E-01 [RF-01/RF-06/CT-01] login válido exibe a simulação no estado Autenticado (371.864167ms)
+  ✔ E2E-02 [RF-01/CT-02] login inválido mantém tela de login com mensagem de erro (120.855834ms)
+  ✔ E2E-03 [RF-05/RF-06/RF-08/CT-06/CT-29] simulação aprovada aparece no histórico (252.667958ms)
+  ✔ E2E-04 [RF-04/RF-05/CT-16] conta inativa resulta em empréstimo negado (421.056291ms)
+  ✖ E2E-05 [RF-06/CT-27] não é possível finalizar sem ter simulado (379.479375ms)
+  ✖ E2E-06 [RF-06/CT-26/CT-28] após finalizar, nova simulação fica bloqueada até reiniciar (691.055042ms)
+  ✔ E2E-07 [RF-09/CT-31] excluir simulação remove a linha do histórico (644.58175ms)
+  ✔ E2E-08 [RF-10/CT-32] sair encerra a sessão e volta para o login (339.645792ms)
+✖ Fluxos ponta a ponta (Selenium) (6695.948042ms)
+ℹ tests 8
+ℹ suites 1
+ℹ pass 6
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6835.301625
+
+✖ failing tests:
+
+test at tests/e2e/fluxos.test.js:78:3
+✖ E2E-05 [RF-06/CT-27] não é possível finalizar sem ter simulado (379.479375ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'Finalizado'
+  - 'Autenticado'
+  
+      at ./tests/e2e/fluxos.test.js:83:12
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async comCaptura (./tests/e2e/fluxos.test.js:39:7)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'Finalizado',
+    expected: 'Autenticado',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/e2e/fluxos.test.js:86:3
+✖ E2E-06 [RF-06/CT-26/CT-28] após finalizar, nova simulação fica bloqueada até reiniciar (691.055042ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at ./tests/e2e/fluxos.test.js:93:12
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async comCaptura (./tests/e2e/fluxos.test.js:39:7)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+    FALHOU
+RESULTADO FINAL: REPROVADO

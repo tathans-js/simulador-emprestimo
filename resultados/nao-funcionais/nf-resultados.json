@@ -1,0 +1,70 @@
+{
+  "executadoEm": "2026-11-19T20:59:17.738Z",
+  "node": "v24.22.2",
+  "plataforma": "darwin",
+  "medicoes": {
+    "NF-01": {
+      "criterio": "p95 < 500 ms",
+      "unidade": "ms",
+      "n": 100,
+      "media": 0.84,
+      "p95": 1.76,
+      "min": 0.5,
+      "max": 6.14
+    },
+    "NF-02": {
+      "criterio": "máximo < 2000 ms",
+      "unidade": "ms",
+      "n": 10,
+      "media": 11.54,
+      "p95": 45.2,
+      "min": 4.9,
+      "max": 45.2
+    },
+    "NF-03": {
+      "criterio": "login + simulação aprovada",
+      "navegador": "Chrome 157.0.8103.79",
+      "resultado": "EMPRÉSTIMO APROVADO\nProposta gerada com sucesso."
+    },
+    "NF-04": {
+      "criterio": "login + simulação aprovada",
+      "navegador": "Firefox 160.0.1",
+      "resultado": "EMPRÉSTIMO APROVADO\nProposta gerada com sucesso."
+    },
+    "NF-05": {
+      "criterio": "sem rolagem horizontal e fluxo concluído",
+      "rolagemHorizontal": false,
+      "resultado": "EMPRÉSTIMO APROVADO\nProposta gerada com sucesso."
+    },
+    "NF-06": {
+      "criterio": "todas as respostas = 401",
+      "obtidos": {
+        "GET /api/simulacoes (sem token)": 401,
+        "GET /api/simulacoes (token inválido)": 401,
+        "POST /api/simulacoes (sem token)": 401,
+        "POST /api/simulacoes (token inválido)": 401,
+        "DELETE /api/simulacoes/1 (sem token)": 401,
+        "DELETE /api/simulacoes/1 (token inválido)": 401,
+        "POST /api/logout (sem token)": 401,
+        "POST /api/logout (token inválido)": 401
+      }
+    },
+    "NF-07": {
+      "criterio": "senha ausente em / e /app.js",
+      "senhaEncontrada": false
+    },
+    "NF-08": {
+      "criterio": "nenhuma rota retorna 200",
+      "status": [
+        404,
+        404,
+        404
+      ]
+    },
+    "NF-09": {
+      "criterio": "50 registros após reinício e JSON válido",
+      "registrosNoArquivo": 50,
+      "registrosAposReinicio": 50
+    }
+  }
+}

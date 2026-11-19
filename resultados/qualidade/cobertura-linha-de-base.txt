@@ -1,0 +1,154 @@
+✔ IT-01 [RF-01] login com credenciais válidas retorna 200 e token (45.881875ms)
+✔ IT-02 [RF-01] login com senha inválida retorna 401 e mensagem de erro (1.958875ms)
+✔ IT-03 [RNF-03] criar simulação sem token retorna 401 (1.054708ms)
+✔ IT-04 [RF-05/RF-08] simulação válida retorna 201, APROVADO e fica persistida (3.207292ms)
+✔ IT-05 [RF-04/RF-05] conta inativa retorna 201 com NEGADO (1.758625ms)
+✔ IT-06 [RF-07] dados inválidos retornam 400 e não são persistidos (2.746ms)
+✔ IT-07 [RF-09] excluir simulação existente retorna 204 e remove do histórico (3.114917ms)
+✔ IT-08 [RF-09] excluir simulação inexistente retorna 404 (1.738958ms)
+✔ IT-09 [RF-10] após logout o token deixa de ser aceito (1.311958ms)
+✔ IT-10 [RNF-04] dados persistem após reinício do servidor (5.498ms)
+✔ IT-11 [RF-07] JSON malformado retorna 400 (4.994084ms)
+✔ UT-01 [RF-02/CT-06] idade 30 (partição válida) é aceita (1.199458ms)
+✔ UT-02 [RF-02/CT-07] idade 17 (abaixo do limite) é rejeitada (0.082042ms)
+✖ UT-03 [RF-02/CT-08] idade 18 (limite inferior inclusivo) é aceita (2.582667ms)
+✖ UT-04 [RF-02/CT-09] idade 60 (limite superior inclusivo) é aceita (0.095875ms)
+✔ UT-05 [RF-02/CT-10] idade 61 (acima do limite) é rejeitada (0.051292ms)
+✔ UT-06 [RF-03/CT-13] renda exatamente 5x o valor é suficiente (0.067666ms)
+✔ UT-07 [RF-03/CT-14] renda 1 centavo abaixo de 5x é insuficiente (0.048958ms)
+✔ UT-08 [RF-04/CT-16] conta "nao" é considerada inativa (0.044584ms)
+✔ UT-09 [RF-05/CT-06] todas as condições atendidas resultam em APROVADO (0.084458ms)
+✔ UT-10 [RF-05/CT-17] nenhuma condição atendida resulta em NEGADO (0.053ms)
+✔ UT-11 [RF-07/CT-19] valor solicitado zero é dado inválido (0.045625ms)
+✔ UT-12 [RF-07/CT-20] valor solicitado negativo é dado inválido (0.037709ms)
+✖ UT-13 [RF-07/CT-21] idade em branco é dado inválido (não pode virar zero) (0.060875ms)
+✖ UT-14 [RF-07/CT-22] renda em branco é dado inválido (não pode virar zero) (0.052042ms)
+✖ UT-15 [RF-07] campo ausente (null) é dado inválido (0.051334ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 21
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 176.640667
+ℹ start of coverage report
+ℹ -------------------------------------------------------------------------
+ℹ file            | line % | branch % | funcs % | uncovered lines
+ℹ -------------------------------------------------------------------------
+ℹ src             |        |          |         | 
+ℹ  auth.js        | 100.00 |   100.00 |  100.00 | 
+ℹ  regras.js      | 100.00 |   100.00 |  100.00 | 
+ℹ  repositorio.js |  97.92 |   100.00 |   87.50 | 43
+ℹ  servidor.js    |  86.61 |    81.40 |   81.82 | 92-93 97-105 111 121-125
+ℹ -------------------------------------------------------------------------
+ℹ all files       |  92.59 |    89.61 |   89.29 | 
+ℹ -------------------------------------------------------------------------
+ℹ end of coverage report
+
+✖ failing tests:
+
+test at tests/unit/regras.test.js:20:1
+✖ UT-03 [RF-02/CT-08] idade 18 (limite inferior inclusivo) é aceita (2.582667ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (./tests/unit/regras.test.js:21:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/unit/regras.test.js:24:1
+✖ UT-04 [RF-02/CT-09] idade 60 (limite superior inclusivo) é aceita (0.095875ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (./tests/unit/regras.test.js:25:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/unit/regras.test.js:61:1
+✖ UT-13 [RF-07/CT-21] idade em branco é dado inválido (não pode virar zero) (0.060875ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (./tests/unit/regras.test.js:62:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/unit/regras.test.js:65:1
+✖ UT-14 [RF-07/CT-22] renda em branco é dado inválido (não pode virar zero) (0.052042ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (./tests/unit/regras.test.js:66:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/unit/regras.test.js:69:1
+✖ UT-15 [RF-07] campo ausente (null) é dado inválido (0.051334ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (./tests/unit/regras.test.js:70:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

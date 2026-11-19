@@ -19,4 +19,5 @@ etapa "Testes de integração (API)" npm run -s test:api
 etapa "Testes de integração (Postman/Newman)" npm run -s test:postman
 etapa "Testes de sistema (Selenium)" npm run -s test:e2e
 echo "RESULTADO FINAL: $([ $status -eq 0 ] && echo APROVADO || echo REPROVADO)" | tee -a "$LOG"
+node scripts/sanitizar_resultados.js
 exit $status

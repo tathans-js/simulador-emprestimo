@@ -1,0 +1,585 @@
+[
+  {
+    "execucao": "EX-C1-01",
+    "caso": "CT-01",
+    "titulo": "Login com credenciais válidas",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:03",
+    "esperado": {
+      "telaSimulacao": "visível",
+      "estado": "Autenticado"
+    },
+    "obtido": {
+      "telaSimulacao": "visível",
+      "estado": "Autenticado"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-01.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-02",
+    "caso": "CT-02",
+    "titulo": "Login com senha incorreta",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:04",
+    "esperado": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "obtido": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-02.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-03",
+    "caso": "CT-03",
+    "titulo": "Login com usuário inexistente",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:04",
+    "esperado": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "obtido": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-03.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-04",
+    "caso": "CT-04",
+    "titulo": "Login com campos vazios",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:05",
+    "esperado": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "obtido": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-04.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-05",
+    "caso": "CT-05",
+    "titulo": "Login sensível a maiúsculas (Admin)",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:05",
+    "esperado": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "obtido": {
+      "mensagem": "Login ou senha inválidos.",
+      "telaSimulacao": "oculta"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-05.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-06",
+    "caso": "CT-06",
+    "titulo": "Idade 30 – partição válida",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:05",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-06.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-07",
+    "caso": "CT-07",
+    "titulo": "Idade 17 – abaixo do limite inferior",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:06",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-07.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-08",
+    "caso": "CT-08",
+    "titulo": "Idade 18 – limite inferior inclusivo",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:07",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Reprovado",
+    "evidencia": "resultados/execucoes/C1/CT-08.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-09",
+    "caso": "CT-09",
+    "titulo": "Idade 60 – limite superior inclusivo",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:08",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Reprovado",
+    "evidencia": "resultados/execucoes/C1/CT-09.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-10",
+    "caso": "CT-10",
+    "titulo": "Idade 61 – acima do limite superior",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:08",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-10.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-11",
+    "caso": "CT-11",
+    "titulo": "Idade 19 – logo acima do limite inferior",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:09",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-11.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-12",
+    "caso": "CT-12",
+    "titulo": "Idade 59 – logo abaixo do limite superior",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:10",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-12.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-13",
+    "caso": "CT-13",
+    "titulo": "Renda exatamente 5x o valor",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:10",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO APROVADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-13.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-14",
+    "caso": "CT-14",
+    "titulo": "Renda 1 centavo abaixo de 5x",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:11",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-14.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-15",
+    "caso": "CT-15",
+    "titulo": "Renda 2x o valor – partição inválida",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:12",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-15.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-16",
+    "caso": "CT-16",
+    "titulo": "Conta inativa com demais dados válidos",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:13",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-16.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-17",
+    "caso": "CT-17",
+    "titulo": "Nenhuma condição atendida",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:14",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-17.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-18",
+    "caso": "CT-18",
+    "titulo": "Idade e renda inválidas com conta ativa",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:14",
+    "esperado": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-18.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-19",
+    "caso": "CT-19",
+    "titulo": "Valor solicitado igual a zero",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:16",
+    "esperado": {
+      "resultado": "Dados inválidos."
+    },
+    "obtido": {
+      "resultado": "Dados inválidos."
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-19.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-20",
+    "caso": "CT-20",
+    "titulo": "Valor solicitado negativo",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:16",
+    "esperado": {
+      "resultado": "Dados inválidos."
+    },
+    "obtido": {
+      "resultado": "(sem mensagem)"
+    },
+    "resultado": "Reprovado",
+    "evidencia": "resultados/execucoes/C1/CT-20.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-21",
+    "caso": "CT-21",
+    "titulo": "Idade em branco",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:18",
+    "esperado": {
+      "resultado": "Dados inválidos."
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Reprovado",
+    "evidencia": "resultados/execucoes/C1/CT-21.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-22",
+    "caso": "CT-22",
+    "titulo": "Renda em branco",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:19",
+    "esperado": {
+      "resultado": "Dados inválidos."
+    },
+    "obtido": {
+      "resultado": "EMPRÉSTIMO NEGADO"
+    },
+    "resultado": "Reprovado",
+    "evidencia": "resultados/execucoes/C1/CT-22.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-23",
+    "caso": "CT-23",
+    "titulo": "Renda negativa",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:19",
+    "esperado": {
+      "resultado": "Dados inválidos."
+    },
+    "obtido": {
+      "resultado": "(sem mensagem)"
+    },
+    "resultado": "Reprovado",
+    "evidencia": "resultados/execucoes/C1/CT-23.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-24",
+    "caso": "CT-24",
+    "titulo": "Dados inválidos não alteram o estado",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:20",
+    "esperado": {
+      "resultado": "Dados inválidos.",
+      "estado": "Autenticado"
+    },
+    "obtido": {
+      "resultado": "Dados inválidos.",
+      "estado": "Autenticado"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-24.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-25",
+    "caso": "CT-25",
+    "titulo": "Transição Autenticado → Em Simulação",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:21",
+    "esperado": {
+      "estado": "Em Simulação"
+    },
+    "obtido": {
+      "estado": "Em Simulação"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-25.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-26",
+    "caso": "CT-26",
+    "titulo": "Transição Em Simulação → Finalizado",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:22",
+    "esperado": {
+      "estado": "Finalizado",
+      "resultado": "Simulação finalizada."
+    },
+    "obtido": {
+      "estado": "Finalizado",
+      "resultado": "Simulação finalizada."
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-26.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-27",
+    "caso": "CT-27",
+    "titulo": "Finalizar sem ter simulado (transição inválida)",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:23",
+    "esperado": {
+      "estado": "Autenticado"
+    },
+    "obtido": {
+      "estado": "Finalizado"
+    },
+    "resultado": "Reprovado",
+    "evidencia": "resultados/execucoes/C1/CT-27.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-28",
+    "caso": "CT-28",
+    "titulo": "Simular após Finalizado (transição inválida)",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:24",
+    "esperado": {
+      "estado": "Finalizado"
+    },
+    "obtido": {
+      "estado": "Em Simulação"
+    },
+    "resultado": "Reprovado",
+    "evidencia": "resultados/execucoes/C1/CT-28.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-29",
+    "caso": "CT-29",
+    "titulo": "Simulação registrada no histórico",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:25",
+    "esperado": {
+      "linhasHistorico": "1",
+      "ultimaLinha": "APROVADO"
+    },
+    "obtido": {
+      "linhasHistorico": "1",
+      "ultimaLinha": "APROVADO"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-29.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-30",
+    "caso": "CT-30",
+    "titulo": "Histórico persiste após recarregar a página e reiniciar o servidor",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:26",
+    "esperado": {
+      "linhasHistorico": "2"
+    },
+    "obtido": {
+      "linhasHistorico": "2"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-30.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-31",
+    "caso": "CT-31",
+    "titulo": "Excluir simulação do histórico",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:28",
+    "esperado": {
+      "linhasHistorico": "0",
+      "mensagemVazio": "Nenhuma simulação registrada."
+    },
+    "obtido": {
+      "linhasHistorico": "0",
+      "mensagemVazio": "Nenhuma simulação registrada."
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-31.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-32",
+    "caso": "CT-32",
+    "titulo": "Sair encerra a sessão",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:29",
+    "esperado": {
+      "telaLogin": "visível",
+      "estado": "Não autenticado",
+      "telaSimulacaoAposRecarregar": "oculta"
+    },
+    "obtido": {
+      "telaLogin": "visível",
+      "estado": "Não autenticado",
+      "telaSimulacaoAposRecarregar": "oculta"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-32.png",
+    "observacao": ""
+  },
+  {
+    "execucao": "EX-C1-33",
+    "caso": "CT-33",
+    "titulo": "Simulação sem autenticação (tela exibida via DevTools)",
+    "ciclo": "C1",
+    "versao": "2.0.0 (commit 1977789)",
+    "dataHora": "19/11/2026, 18:03:30",
+    "esperado": {
+      "simulacaoProcessada": "não"
+    },
+    "obtido": {
+      "simulacaoProcessada": "não"
+    },
+    "resultado": "Aprovado",
+    "evidencia": "resultados/execucoes/C1/CT-33.png",
+    "observacao": ""
+  }
+]

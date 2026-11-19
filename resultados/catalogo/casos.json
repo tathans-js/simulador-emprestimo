@@ -1,0 +1,658 @@
+[
+  {
+    "id": "CT-01",
+    "titulo": "Login com credenciais válidas",
+    "requisitos": "RF-01; RF-06",
+    "riscos": "R-01",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Partição de equivalência (classe válida)",
+    "tipo": "Positivo",
+    "prioridade": "Alta",
+    "preCondicoes": "Tela de login aberta.",
+    "dados": "Usuário=admin; Senha=1234",
+    "passos": [
+      "Informar usuário \"admin\".",
+      "Informar senha \"1234\".",
+      "Clicar em \"Entrar\"."
+    ],
+    "esperado": "telaSimulacao: visível; estado: Autenticado",
+    "automacao": "Sim – E2E-01, IT-01, PM-03"
+  },
+  {
+    "id": "CT-02",
+    "titulo": "Login com senha incorreta",
+    "requisitos": "RF-01",
+    "riscos": "R-01",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Partição de equivalência (classe inválida)",
+    "tipo": "Negativo",
+    "prioridade": "Alta",
+    "preCondicoes": "Tela de login aberta.",
+    "dados": "Usuário=admin; Senha=senhaerrada",
+    "passos": [
+      "Informar usuário \"admin\".",
+      "Informar senha \"senhaerrada\".",
+      "Clicar em \"Entrar\"."
+    ],
+    "esperado": "mensagem: Login ou senha inválidos.; telaSimulacao: oculta",
+    "automacao": "Sim – E2E-02, IT-02, PM-02"
+  },
+  {
+    "id": "CT-03",
+    "titulo": "Login com usuário inexistente",
+    "requisitos": "RF-01",
+    "riscos": "R-01",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Partição de equivalência (classe inválida)",
+    "tipo": "Negativo",
+    "prioridade": "Média",
+    "preCondicoes": "Tela de login aberta.",
+    "dados": "Usuário=joao; Senha=1234",
+    "passos": [
+      "Informar usuário \"joao\".",
+      "Informar senha \"1234\".",
+      "Clicar em \"Entrar\"."
+    ],
+    "esperado": "mensagem: Login ou senha inválidos.; telaSimulacao: oculta",
+    "automacao": "Não – mesma partição de CT-02, já automatizada"
+  },
+  {
+    "id": "CT-04",
+    "titulo": "Login com campos vazios",
+    "requisitos": "RF-01",
+    "riscos": "R-01",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Teste de exceção",
+    "tipo": "Exceção",
+    "prioridade": "Média",
+    "preCondicoes": "Tela de login aberta.",
+    "dados": "Usuário=(vazio); Senha=(vazio)",
+    "passos": [
+      "Deixar usuário e senha em branco.",
+      "Clicar em \"Entrar\"."
+    ],
+    "esperado": "mensagem: Login ou senha inválidos.; telaSimulacao: oculta",
+    "automacao": "Não – baixo risco, verificação rápida manual"
+  },
+  {
+    "id": "CT-05",
+    "titulo": "Login sensível a maiúsculas (Admin)",
+    "requisitos": "RF-01; RNF-03",
+    "riscos": "R-01",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Valor limite (variação mínima do dado válido)",
+    "tipo": "Limite",
+    "prioridade": "Baixa",
+    "preCondicoes": "Tela de login aberta.",
+    "dados": "Usuário=Admin; Senha=1234",
+    "passos": [
+      "Informar usuário \"Admin\".",
+      "Informar senha \"1234\".",
+      "Clicar em \"Entrar\"."
+    ],
+    "esperado": "mensagem: Login ou senha inválidos.; telaSimulacao: oculta",
+    "automacao": "Não – baixo risco"
+  },
+  {
+    "id": "CT-06",
+    "titulo": "Idade 30 – partição válida",
+    "requisitos": "RF-02; RF-05",
+    "riscos": "R-02; R-05",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Partição de equivalência (classe válida)",
+    "tipo": "Positivo",
+    "prioridade": "Alta",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=30; Renda=5000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=30, Renda=5000, Valor=1000, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: EMPRÉSTIMO APROVADO",
+    "automacao": "Sim – UT-01, UT-09, E2E-03, PM-05"
+  },
+  {
+    "id": "CT-07",
+    "titulo": "Idade 17 – abaixo do limite inferior",
+    "requisitos": "RF-02",
+    "riscos": "R-02",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Valor limite (17)",
+    "tipo": "Limite",
+    "prioridade": "Alta",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=17; Renda=5000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=17, Renda=5000, Valor=1000, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: EMPRÉSTIMO NEGADO",
+    "automacao": "Sim – UT-02"
+  },
+  {
+    "id": "CT-08",
+    "titulo": "Idade 18 – limite inferior inclusivo",
+    "requisitos": "RF-02",
+    "riscos": "R-02",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Valor limite (18)",
+    "tipo": "Limite",
+    "prioridade": "Alta",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=18; Renda=5000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=18, Renda=5000, Valor=1000, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: EMPRÉSTIMO APROVADO",
+    "automacao": "Sim – UT-03"
+  },
+  {
+    "id": "CT-09",
+    "titulo": "Idade 60 – limite superior inclusivo",
+    "requisitos": "RF-02",
+    "riscos": "R-02",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Valor limite (60)",
+    "tipo": "Limite",
+    "prioridade": "Alta",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=60; Renda=5000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=60, Renda=5000, Valor=1000, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: EMPRÉSTIMO APROVADO",
+    "automacao": "Sim – UT-04"
+  },
+  {
+    "id": "CT-10",
+    "titulo": "Idade 61 – acima do limite superior",
+    "requisitos": "RF-02",
+    "riscos": "R-02",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Valor limite (61)",
+    "tipo": "Limite",
+    "prioridade": "Alta",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=61; Renda=5000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=61, Renda=5000, Valor=1000, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: EMPRÉSTIMO NEGADO",
+    "automacao": "Sim – UT-05"
+  },
+  {
+    "id": "CT-11",
+    "titulo": "Idade 19 – logo acima do limite inferior",
+    "requisitos": "RF-02",
+    "riscos": "R-02",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Valor limite (3 valores: 19)",
+    "tipo": "Limite",
+    "prioridade": "Média",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=19; Renda=5000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=19, Renda=5000, Valor=1000, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: EMPRÉSTIMO APROVADO",
+    "automacao": "Não – coberto pelos limites 18/60 automatizados"
+  },
+  {
+    "id": "CT-12",
+    "titulo": "Idade 59 – logo abaixo do limite superior",
+    "requisitos": "RF-02",
+    "riscos": "R-02",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Valor limite (3 valores: 59)",
+    "tipo": "Limite",
+    "prioridade": "Média",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=59; Renda=5000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=59, Renda=5000, Valor=1000, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: EMPRÉSTIMO APROVADO",
+    "automacao": "Não – coberto pelos limites 18/60 automatizados"
+  },
+  {
+    "id": "CT-13",
+    "titulo": "Renda exatamente 5x o valor",
+    "requisitos": "RF-03",
+    "riscos": "R-03",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Valor limite (renda = 5x)",
+    "tipo": "Limite",
+    "prioridade": "Alta",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=30; Renda=5000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=30, Renda=5000, Valor=1000, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: EMPRÉSTIMO APROVADO",
+    "automacao": "Sim – UT-06"
+  },
+  {
+    "id": "CT-14",
+    "titulo": "Renda 1 centavo abaixo de 5x",
+    "requisitos": "RF-03",
+    "riscos": "R-03",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Valor limite (renda = 5x − 0,01)",
+    "tipo": "Limite",
+    "prioridade": "Alta",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=30; Renda=4999.99; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=30, Renda=4999.99, Valor=1000, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: EMPRÉSTIMO NEGADO",
+    "automacao": "Sim – UT-07"
+  },
+  {
+    "id": "CT-15",
+    "titulo": "Renda 2x o valor – partição inválida",
+    "requisitos": "RF-03",
+    "riscos": "R-03",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Partição de equivalência (classe inválida)",
+    "tipo": "Negativo",
+    "prioridade": "Média",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=30; Renda=2000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=30, Renda=2000, Valor=1000, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: EMPRÉSTIMO NEGADO",
+    "automacao": "Não – mesma partição de CT-14"
+  },
+  {
+    "id": "CT-16",
+    "titulo": "Conta inativa com demais dados válidos",
+    "requisitos": "RF-04; RF-05",
+    "riscos": "R-04; R-05",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Tabela de decisão (regra R4)",
+    "tipo": "Negativo",
+    "prioridade": "Alta",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=30; Renda=5000; Valor=1000; Conta ativa=Não",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=30, Renda=5000, Valor=1000, Conta ativa=Não.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: EMPRÉSTIMO NEGADO",
+    "automacao": "Sim – UT-08, IT-05, E2E-04, PM-06"
+  },
+  {
+    "id": "CT-17",
+    "titulo": "Nenhuma condição atendida",
+    "requisitos": "RF-05",
+    "riscos": "R-05",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Tabela de decisão (todas as condições falsas)",
+    "tipo": "Negativo",
+    "prioridade": "Média",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=17; Renda=100; Valor=1000; Conta ativa=Não",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=17, Renda=100, Valor=1000, Conta ativa=Não.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: EMPRÉSTIMO NEGADO",
+    "automacao": "Sim – UT-10"
+  },
+  {
+    "id": "CT-18",
+    "titulo": "Idade e renda inválidas com conta ativa",
+    "requisitos": "RF-05",
+    "riscos": "R-05",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Tabela de decisão (duas condições falsas)",
+    "tipo": "Negativo",
+    "prioridade": "Média",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=61; Renda=3000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=61, Renda=3000, Valor=1000, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: EMPRÉSTIMO NEGADO",
+    "automacao": "Não – combinação coberta por UT-10"
+  },
+  {
+    "id": "CT-19",
+    "titulo": "Valor solicitado igual a zero",
+    "requisitos": "RF-07",
+    "riscos": "R-07",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Valor limite (valor = 0)",
+    "tipo": "Exceção",
+    "prioridade": "Alta",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=30; Renda=5000; Valor=0; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=30, Renda=5000, Valor=0, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: Dados inválidos.",
+    "automacao": "Sim – UT-11"
+  },
+  {
+    "id": "CT-20",
+    "titulo": "Valor solicitado negativo",
+    "requisitos": "RF-07",
+    "riscos": "R-07",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Partição de equivalência (classe inválida)",
+    "tipo": "Exceção",
+    "prioridade": "Alta",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=30; Renda=5000; Valor=-100; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=30, Renda=5000, Valor=-100, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: Dados inválidos.",
+    "automacao": "Sim – UT-12, IT-06, PM-07"
+  },
+  {
+    "id": "CT-21",
+    "titulo": "Idade em branco",
+    "requisitos": "RF-07",
+    "riscos": "R-07",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Teste de exceção (campo obrigatório vazio)",
+    "tipo": "Exceção",
+    "prioridade": "Alta",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=(vazio); Renda=5000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=(vazio), Renda=5000, Valor=1000, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: Dados inválidos.",
+    "automacao": "Sim – UT-13"
+  },
+  {
+    "id": "CT-22",
+    "titulo": "Renda em branco",
+    "requisitos": "RF-07",
+    "riscos": "R-07",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Teste de exceção (campo obrigatório vazio)",
+    "tipo": "Exceção",
+    "prioridade": "Alta",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=30; Renda=(vazio); Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=30, Renda=(vazio), Valor=1000, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: Dados inválidos.",
+    "automacao": "Sim – UT-14"
+  },
+  {
+    "id": "CT-23",
+    "titulo": "Renda negativa",
+    "requisitos": "RF-07",
+    "riscos": "R-07",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Partição de equivalência (classe inválida)",
+    "tipo": "Exceção",
+    "prioridade": "Média",
+    "preCondicoes": "Sistema em execução; usuário autenticado (admin/1234); estado Autenticado.",
+    "dados": "Idade=30; Renda=-1; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login com admin / 1234.",
+      "Preencher: Idade=30, Renda=-1, Valor=1000, Conta ativa=Sim.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar a mensagem de resultado."
+    ],
+    "esperado": "resultado: Dados inválidos.",
+    "automacao": "Não – mesma regra de CT-20"
+  },
+  {
+    "id": "CT-24",
+    "titulo": "Dados inválidos não alteram o estado",
+    "requisitos": "RF-06; RF-07",
+    "riscos": "R-06",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Teste baseado em estados (evento inválido)",
+    "tipo": "Alternativo",
+    "prioridade": "Média",
+    "preCondicoes": "Usuário autenticado; estado Autenticado.",
+    "dados": "Idade=30; Renda=5000; Valor=0; Conta ativa=Sim",
+    "passos": [
+      "Fazer login.",
+      "Preencher valor solicitado 0 e demais campos válidos.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar mensagem e estado."
+    ],
+    "esperado": "resultado: Dados inválidos.; estado: Autenticado",
+    "automacao": "Não – verificação visual de estado"
+  },
+  {
+    "id": "CT-25",
+    "titulo": "Transição Autenticado → Em Simulação",
+    "requisitos": "RF-06",
+    "riscos": "R-06",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Teste baseado em estados",
+    "tipo": "Positivo",
+    "prioridade": "Alta",
+    "preCondicoes": "Usuário autenticado; estado Autenticado.",
+    "dados": "Idade=30; Renda=5000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login.",
+      "Preencher dados válidos.",
+      "Clicar em \"Simular empréstimo\".",
+      "Observar o estado atual."
+    ],
+    "esperado": "estado: Em Simulação",
+    "automacao": "Sim – E2E-03"
+  },
+  {
+    "id": "CT-26",
+    "titulo": "Transição Em Simulação → Finalizado",
+    "requisitos": "RF-06",
+    "riscos": "R-06",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Teste baseado em estados",
+    "tipo": "Positivo",
+    "prioridade": "Alta",
+    "preCondicoes": "Estado Em Simulação.",
+    "dados": "Idade=30; Renda=5000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login.",
+      "Realizar uma simulação válida.",
+      "Clicar em \"Finalizar\".",
+      "Observar estado e mensagem."
+    ],
+    "esperado": "estado: Finalizado; resultado: Simulação finalizada.",
+    "automacao": "Sim – E2E-06"
+  },
+  {
+    "id": "CT-27",
+    "titulo": "Finalizar sem ter simulado (transição inválida)",
+    "requisitos": "RF-06",
+    "riscos": "R-06",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Teste baseado em estados (transição inválida)",
+    "tipo": "Negativo",
+    "prioridade": "Média",
+    "preCondicoes": "Usuário autenticado; estado Autenticado; nenhuma simulação feita.",
+    "dados": "—",
+    "passos": [
+      "Fazer login.",
+      "Sem simular, tentar clicar em \"Finalizar\".",
+      "Observar o estado atual."
+    ],
+    "esperado": "estado: Autenticado",
+    "automacao": "Sim – E2E-05"
+  },
+  {
+    "id": "CT-28",
+    "titulo": "Simular após Finalizado (transição inválida)",
+    "requisitos": "RF-06",
+    "riscos": "R-06",
+    "nivel": "Sistema (interface)",
+    "tecnica": "Teste baseado em estados (transição inválida)",
+    "tipo": "Negativo",
+    "prioridade": "Média",
+    "preCondicoes": "Estado Finalizado.",
+    "dados": "Idade=30; Renda=5000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login.",
+      "Simular com dados válidos.",
+      "Clicar em \"Finalizar\".",
+      "Tentar clicar em \"Simular empréstimo\" novamente.",
+      "Observar o estado."
+    ],
+    "esperado": "estado: Finalizado",
+    "automacao": "Sim – E2E-06"
+  },
+  {
+    "id": "CT-29",
+    "titulo": "Simulação registrada no histórico",
+    "requisitos": "RF-08",
+    "riscos": "R-08",
+    "nivel": "Sistema (interface + API + arquivo)",
+    "tecnica": "Teste baseado em casos de uso (fluxo principal)",
+    "tipo": "Positivo",
+    "prioridade": "Alta",
+    "somenteV2": true,
+    "preCondicoes": "Usuário autenticado; histórico vazio.",
+    "dados": "Idade=30; Renda=5000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login.",
+      "Simular com dados válidos.",
+      "Verificar a tabela \"Histórico de simulações\"."
+    ],
+    "esperado": "linhasHistorico: 1; ultimaLinha: APROVADO",
+    "automacao": "Sim – E2E-03, IT-04, PM-08"
+  },
+  {
+    "id": "CT-30",
+    "titulo": "Histórico persiste após recarregar a página e reiniciar o servidor",
+    "requisitos": "RF-08; RNF-04",
+    "riscos": "R-08",
+    "nivel": "Sistema (interface + API + arquivo)",
+    "tecnica": "Teste de confiabilidade (reinício controlado)",
+    "tipo": "Alternativo",
+    "prioridade": "Alta",
+    "somenteV2": true,
+    "preCondicoes": "Usuário autenticado; histórico vazio.",
+    "dados": "2 simulações (30 anos ativa; 30 anos inativa)",
+    "passos": [
+      "Fazer login e realizar 2 simulações.",
+      "Parar e iniciar novamente o servidor (npm start).",
+      "Recarregar a página e fazer login.",
+      "Verificar o histórico."
+    ],
+    "esperado": "linhasHistorico: 2",
+    "automacao": "Sim – IT-10, NF-09"
+  },
+  {
+    "id": "CT-31",
+    "titulo": "Excluir simulação do histórico",
+    "requisitos": "RF-09",
+    "riscos": "R-09",
+    "nivel": "Sistema (interface + API + arquivo)",
+    "tecnica": "Teste baseado em casos de uso (fluxo alternativo)",
+    "tipo": "Positivo",
+    "prioridade": "Média",
+    "somenteV2": true,
+    "preCondicoes": "Usuário autenticado; 1 simulação no histórico.",
+    "dados": "Idade=30; Renda=5000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Fazer login e realizar 1 simulação.",
+      "Clicar em \"Excluir\" na linha da simulação.",
+      "Verificar o histórico."
+    ],
+    "esperado": "linhasHistorico: 0; mensagemVazio: Nenhuma simulação registrada.",
+    "automacao": "Sim – E2E-07, IT-07, PM-09"
+  },
+  {
+    "id": "CT-32",
+    "titulo": "Sair encerra a sessão",
+    "requisitos": "RF-10; RF-06",
+    "riscos": "R-10",
+    "nivel": "Sistema (interface + API)",
+    "tecnica": "Teste baseado em estados",
+    "tipo": "Positivo",
+    "prioridade": "Alta",
+    "somenteV2": true,
+    "preCondicoes": "Usuário autenticado.",
+    "dados": "—",
+    "passos": [
+      "Fazer login.",
+      "Clicar em \"Sair\".",
+      "Observar a tela exibida e o estado.",
+      "Recarregar a página."
+    ],
+    "esperado": "telaLogin: visível; estado: Não autenticado; telaSimulacaoAposRecarregar: oculta",
+    "automacao": "Sim – E2E-08, IT-09, PM-11"
+  },
+  {
+    "id": "CT-33",
+    "titulo": "Simulação sem autenticação (tela exibida via DevTools)",
+    "requisitos": "RNF-03; RF-01",
+    "riscos": "R-10",
+    "nivel": "Sistema (segurança básica)",
+    "tecnica": "Teste de segurança básica (controle de acesso)",
+    "tipo": "Exceção",
+    "prioridade": "Alta",
+    "preCondicoes": "Tela de login aberta, sem autenticação.",
+    "dados": "Idade=30; Renda=5000; Valor=1000; Conta ativa=Sim",
+    "passos": [
+      "Abrir DevTools (F12) > Console.",
+      "Executar: document.getElementById(\"app\").classList.remove(\"hidden\")",
+      "Preencher dados válidos e clicar em \"Simular empréstimo\".",
+      "Observar se a simulação foi processada."
+    ],
+    "esperado": "simulacaoProcessada: não",
+    "automacao": "Sim – IT-03, PM-04, NF-06"
+  }
+]
