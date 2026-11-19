@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites name="Simulador de Empréstimo - API (P2 TQS)" tests="12" time="0.028">
-  <testsuite name="PM-01 [RNF-04] Saúde do serviço" id="6ee36f29-c540-4eba-b324-f56051b69f4c" timestamp="2026-11-19T20:59:46.485Z" tests="2" failures="0" errors="0" time="0.016">
+  <testsuite name="PM-01 [RNF-04] Saúde do serviço" id="723455b4-9b92-42e2-9e89-e1f86cb1e7e6" timestamp="2026-11-19T21:05:46.561Z" tests="2" failures="0" errors="0" time="0.016">
     <testcase name="status 200" time="0.016" classname="Pm01Rnf04SaudeDoServico"/>
     <testcase name="status ok" time="0.016" classname="Pm01Rnf04SaudeDoServico"/>
   </testsuite>
-  <testsuite name="PM-02 [RF-01/CT-02] Login inválido" id="74f58c3f-81fd-4bd3-bed8-a655d918ed2a" timestamp="2026-11-19T20:59:46.485Z" tests="3" failures="0" errors="0" time="0.002">
-    <testcase name="status 401" time="0.002" classname="Pm02Rf01Ct02LoginInvalido"/>
-    <testcase name="mensagem de erro" time="0.002" classname="Pm02Rf01Ct02LoginInvalido"/>
-    <testcase name="sem token" time="0.002" classname="Pm02Rf01Ct02LoginInvalido"/>
+  <testsuite name="PM-02 [RF-01/CT-02] Login inválido" id="534daa52-8700-4046-9895-a2314d51696b" timestamp="2026-11-19T21:05:46.561Z" tests="3" failures="0" errors="0" time="0.001">
+    <testcase name="status 401" time="0.001" classname="Pm02Rf01Ct02LoginInvalido"/>
+    <testcase name="mensagem de erro" time="0.001" classname="Pm02Rf01Ct02LoginInvalido"/>
+    <testcase name="sem token" time="0.001" classname="Pm02Rf01Ct02LoginInvalido"/>
   </testsuite>
-  <testsuite name="PM-03 [RF-01/CT-01] Login válido" id="eac0546d-d922-42cf-9c9c-924b5087e2d8" timestamp="2026-11-19T20:59:46.485Z" tests="2" failures="0" errors="0" time="0.001">
+  <testsuite name="PM-03 [RF-01/CT-01] Login válido" id="b2b712cb-2973-4a92-8b0d-326ca4c8d4ed" timestamp="2026-11-19T21:05:46.561Z" tests="2" failures="0" errors="0" time="0.001">
     <testcase name="status 200" time="0.001" classname="Pm03Rf01Ct01LoginValido"/>
     <testcase name="token hexadecimal de 48 caracteres" time="0.001" classname="Pm03Rf01Ct01LoginValido"/>
   </testsuite>
-  <testsuite name="PM-04 [RNF-03/CT-33] Criar simulação sem token" id="e3c4a062-e280-48a1-ad20-e3aed74ae92a" timestamp="2026-11-19T20:59:46.485Z" tests="1" failures="0" errors="0" time="0.001">
+  <testsuite name="PM-04 [RNF-03/CT-33] Criar simulação sem token" id="943f86c2-22f4-462d-850b-a9118810de51" timestamp="2026-11-19T21:05:46.561Z" tests="1" failures="0" errors="0" time="0.001">
     <testcase name="status 401" time="0.001" classname="Pm04Rnf03Ct33CriarSimulacaoSemToken"/>
   </testsuite>
-  <testsuite name="PM-05 [RF-05/RF-08/CT-06] Criar simulação aprovada" id="d4f999d5-21e2-439b-abac-74e332c14ead" timestamp="2026-11-19T20:59:46.485Z" tests="4" failures="0" errors="0" time="0.001">
-    <testcase name="status 201" time="0.001" classname="Pm05Rf05Rf08Ct06CriarSimulacaoAprovada"/>
-    <testcase name="resultado APROVADO" time="0.001" classname="Pm05Rf05Rf08Ct06CriarSimulacaoAprovada"/>
-    <testcase name="contrato básico" time="0.001" classname="Pm05Rf05Rf08Ct06CriarSimulacaoAprovada"/>
-    <testcase name="tempo de resposta &lt; 500 ms" time="0.001" classname="Pm05Rf05Rf08Ct06CriarSimulacaoAprovada"/>
+  <testsuite name="PM-05 [RF-05/RF-08/CT-06] Criar simulação aprovada" id="2e90ed9e-315e-43c3-a5b0-6514cbfd8f53" timestamp="2026-11-19T21:05:46.561Z" tests="4" failures="0" errors="0" time="0.002">
+    <testcase name="status 201" time="0.002" classname="Pm05Rf05Rf08Ct06CriarSimulacaoAprovada"/>
+    <testcase name="resultado APROVADO" time="0.002" classname="Pm05Rf05Rf08Ct06CriarSimulacaoAprovada"/>
+    <testcase name="contrato básico" time="0.002" classname="Pm05Rf05Rf08Ct06CriarSimulacaoAprovada"/>
+    <testcase name="tempo de resposta &lt; 500 ms" time="0.002" classname="Pm05Rf05Rf08Ct06CriarSimulacaoAprovada"/>
   </testsuite>
-  <testsuite name="PM-06 [RF-04/CT-16] Criar simulação com conta inativa" id="854bf09f-6177-4113-92e0-a1e3d1f6a6bc" timestamp="2026-11-19T20:59:46.485Z" tests="2" failures="0" errors="0" time="0.001">
-    <testcase name="status 201" time="0.001" classname="Pm06Rf04Ct16CriarSimulacaoComContaInativa"/>
-    <testcase name="resultado NEGADO" time="0.001" classname="Pm06Rf04Ct16CriarSimulacaoComContaInativa"/>
+  <testsuite name="PM-06 [RF-04/CT-16] Criar simulação com conta inativa" id="cc6a1b70-a72d-4069-a117-d91bbd4a7b64" timestamp="2026-11-19T21:05:46.561Z" tests="2" failures="0" errors="0" time="0.002">
+    <testcase name="status 201" time="0.002" classname="Pm06Rf04Ct16CriarSimulacaoComContaInativa"/>
+    <testcase name="resultado NEGADO" time="0.002" classname="Pm06Rf04Ct16CriarSimulacaoComContaInativa"/>
   </testsuite>
-  <testsuite name="PM-07 [RF-07/CT-20] Criar simulação com valor negativo" id="a27d022b-c4dc-444e-8953-c0a0a8c4d9ce" timestamp="2026-11-19T20:59:46.485Z" tests="2" failures="0" errors="0" time="0.001">
+  <testsuite name="PM-07 [RF-07/CT-20] Criar simulação com valor negativo" id="49069301-6984-4fb0-8249-311b11656691" timestamp="2026-11-19T21:05:46.561Z" tests="2" failures="0" errors="0" time="0.001">
     <testcase name="status 400" time="0.001" classname="Pm07Rf07Ct20CriarSimulacaoComValorNegativo"/>
     <testcase name="mensagem Dados inválidos." time="0.001" classname="Pm07Rf07Ct20CriarSimulacaoComValorNegativo"/>
   </testsuite>
-  <testsuite name="PM-08 [RF-08/CT-29] Listar histórico" id="4cc63c4d-ea33-4eca-bb8e-3593dc0d0eeb" timestamp="2026-11-19T20:59:46.485Z" tests="3" failures="0" errors="0" time="0.001">
+  <testsuite name="PM-08 [RF-08/CT-29] Listar histórico" id="75805bba-d0e9-44d5-9ceb-747876e76bad" timestamp="2026-11-19T21:05:46.561Z" tests="3" failures="0" errors="0" time="0.001">
     <testcase name="status 200" time="0.001" classname="Pm08Rf08Ct29ListarHistorico"/>
     <testcase name="é uma lista" time="0.001" classname="Pm08Rf08Ct29ListarHistorico"/>
     <testcase name="contém a simulação criada" time="0.001" classname="Pm08Rf08Ct29ListarHistorico"/>
   </testsuite>
-  <testsuite name="PM-09 [RF-09/CT-31] Excluir simulação" id="abb4ed4a-724f-4fcf-876f-17712cb3cb8c" timestamp="2026-11-19T20:59:46.485Z" tests="1" failures="0" errors="0" time="0.001">
+  <testsuite name="PM-09 [RF-09/CT-31] Excluir simulação" id="03f2b536-87fa-49bf-8e26-766eef8fd722" timestamp="2026-11-19T21:05:46.561Z" tests="1" failures="0" errors="0" time="0.001">
     <testcase name="status 204" time="0.001" classname="Pm09Rf09Ct31ExcluirSimulacao"/>
   </testsuite>
-  <testsuite name="PM-10 [RF-09] Excluir simulação já excluída" id="d8e87e5d-b206-4a65-80c3-e8595b7bf71f" timestamp="2026-11-19T20:59:46.485Z" tests="2" failures="0" errors="0" time="0.001">
+  <testsuite name="PM-10 [RF-09] Excluir simulação já excluída" id="7919c427-a952-44d8-80d2-d32a94ff2b0c" timestamp="2026-11-19T21:05:46.561Z" tests="2" failures="0" errors="0" time="0.001">
     <testcase name="status 404" time="0.001" classname="Pm10Rf09ExcluirSimulacaoJaExcluida"/>
     <testcase name="mensagem" time="0.001" classname="Pm10Rf09ExcluirSimulacaoJaExcluida"/>
   </testsuite>
-  <testsuite name="PM-11 [RF-10/CT-32] Logout" id="e439aef7-402b-4b7c-95c6-53ac91e147d1" timestamp="2026-11-19T20:59:46.485Z" tests="1" failures="0" errors="0" time="0.001">
-    <testcase name="status 204" time="0.001" classname="Pm11Rf10Ct32Logout"/>
+  <testsuite name="PM-11 [RF-10/CT-32] Logout" id="7a27ecdd-f15c-47d2-87ec-84cd7f5bb519" timestamp="2026-11-19T21:05:46.561Z" tests="1" failures="0" errors="0" time="0.000">
+    <testcase name="status 204" time="0.000" classname="Pm11Rf10Ct32Logout"/>
   </testsuite>
-  <testsuite name="PM-12 [RF-10/RNF-03] Listar após logout" id="99d81649-8926-44d3-9f8d-57544d738814" timestamp="2026-11-19T20:59:46.485Z" tests="1" failures="0" errors="0" time="0.001">
+  <testsuite name="PM-12 [RF-10/RNF-03] Listar após logout" id="8b196e74-c295-43ef-a88e-341f6eba4b75" timestamp="2026-11-19T21:05:46.561Z" tests="1" failures="0" errors="0" time="0.001">
     <testcase name="status 401" time="0.001" classname="Pm12Rf10Rnf03ListarAposLogout"/>
   </testsuite>
 </testsuites>
