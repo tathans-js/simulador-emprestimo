@@ -1,0 +1,391 @@
+{
+  "ciclos": {
+    "C0": {
+      "planejados": 33,
+      "executados": 29,
+      "aprovados": 22,
+      "reprovados": 7,
+      "bloqueados": 0,
+      "naoExecutados": 4,
+      "versao": "1.0 (v1.0/index.html)",
+      "percentualExecucao": 87.88,
+      "taxaAprovacao": 75.86,
+      "taxaReprovacao": 24.14
+    },
+    "C1": {
+      "planejados": 33,
+      "executados": 33,
+      "aprovados": 25,
+      "reprovados": 8,
+      "bloqueados": 0,
+      "naoExecutados": 0,
+      "versao": "2.0.0 (commit 1977789)",
+      "percentualExecucao": 100.0,
+      "taxaAprovacao": 75.76,
+      "taxaReprovacao": 24.24
+    },
+    "C2": {
+      "planejados": 34,
+      "executados": 34,
+      "aprovados": 34,
+      "reprovados": 0,
+      "bloqueados": 0,
+      "naoExecutados": 0,
+      "versao": "2.1.0 (commit b99bb99)",
+      "percentualExecucao": 100.0,
+      "taxaAprovacao": 100.0,
+      "taxaReprovacao": 0.0
+    }
+  },
+  "percentualExecucao": 100.0,
+  "taxaAprovacao": {
+    "C1": 75.76,
+    "C2": 100.0
+  },
+  "taxaReprovacao": {
+    "C1": 24.24,
+    "C2": 0.0
+  },
+  "coberturaRequisitos": {
+    "cobertos": 15,
+    "total": 15,
+    "percentual": 100.0,
+    "detalhe": {
+      "RF-01": {
+        "manuais": [
+          "CT-01",
+          "CT-02",
+          "CT-03",
+          "CT-04",
+          "CT-05",
+          "CT-33"
+        ],
+        "automatizados": [
+          "IT-01",
+          "IT-02",
+          "E2E-01",
+          "E2E-02",
+          "PM-02",
+          "PM-03"
+        ]
+      },
+      "RF-02": {
+        "manuais": [
+          "CT-06",
+          "CT-07",
+          "CT-08",
+          "CT-09",
+          "CT-10",
+          "CT-11",
+          "CT-12"
+        ],
+        "automatizados": [
+          "UT-01",
+          "UT-02",
+          "UT-03",
+          "UT-04",
+          "UT-05"
+        ]
+      },
+      "RF-03": {
+        "manuais": [
+          "CT-13",
+          "CT-14",
+          "CT-15"
+        ],
+        "automatizados": [
+          "UT-06",
+          "UT-07"
+        ]
+      },
+      "RF-04": {
+        "manuais": [
+          "CT-16"
+        ],
+        "automatizados": [
+          "UT-08",
+          "IT-05",
+          "E2E-04",
+          "PM-06"
+        ]
+      },
+      "RF-05": {
+        "manuais": [
+          "CT-06",
+          "CT-16",
+          "CT-17",
+          "CT-18",
+          "CT-34"
+        ],
+        "automatizados": [
+          "UT-09",
+          "UT-10",
+          "IT-04",
+          "IT-05",
+          "E2E-03",
+          "PM-05"
+        ]
+      },
+      "RF-06": {
+        "manuais": [
+          "CT-01",
+          "CT-24",
+          "CT-25",
+          "CT-26",
+          "CT-27",
+          "CT-28",
+          "CT-32"
+        ],
+        "automatizados": [
+          "E2E-05",
+          "E2E-06"
+        ]
+      },
+      "RF-07": {
+        "manuais": [
+          "CT-19",
+          "CT-20",
+          "CT-21",
+          "CT-22",
+          "CT-23",
+          "CT-24"
+        ],
+        "automatizados": [
+          "UT-11",
+          "UT-12",
+          "UT-13",
+          "UT-14",
+          "UT-15",
+          "IT-06",
+          "IT-11",
+          "PM-07"
+        ]
+      },
+      "RF-08": {
+        "manuais": [
+          "CT-29",
+          "CT-30"
+        ],
+        "automatizados": [
+          "IT-04",
+          "PM-08"
+        ]
+      },
+      "RF-09": {
+        "manuais": [
+          "CT-31"
+        ],
+        "automatizados": [
+          "IT-07",
+          "IT-08",
+          "E2E-07",
+          "PM-09",
+          "PM-10"
+        ]
+      },
+      "RF-10": {
+        "manuais": [
+          "CT-32"
+        ],
+        "automatizados": [
+          "IT-09",
+          "E2E-08",
+          "PM-11",
+          "PM-12"
+        ]
+      },
+      "RF-11": {
+        "manuais": [
+          "CT-34"
+        ],
+        "automatizados": [
+          "UT-16",
+          "UT-17",
+          "UT-18",
+          "IT-12",
+          "E2E-09"
+        ]
+      },
+      "RNF-01": {
+        "manuais": [],
+        "automatizados": [
+          "NF-01",
+          "NF-02"
+        ]
+      },
+      "RNF-02": {
+        "manuais": [],
+        "automatizados": [
+          "NF-03",
+          "NF-04",
+          "NF-05"
+        ]
+      },
+      "RNF-03": {
+        "manuais": [
+          "CT-05",
+          "CT-33"
+        ],
+        "automatizados": [
+          "IT-03",
+          "PM-04",
+          "PM-12",
+          "NF-06",
+          "NF-07",
+          "NF-08"
+        ]
+      },
+      "RNF-04": {
+        "manuais": [
+          "CT-30"
+        ],
+        "automatizados": [
+          "IT-10",
+          "PM-01",
+          "NF-09"
+        ]
+      }
+    }
+  },
+  "taxaAutomacao": {
+    "automatizados": 25,
+    "planejados": 25,
+    "percentual": 100.0
+  },
+  "defeitosPorSeveridade": {
+    "Alta": 2,
+    "Média": 2,
+    "Baixa": 1
+  },
+  "defeitosPorStatus": {
+    "Encerrado": 5
+  },
+  "taxaReabertura": {
+    "reabertos": 0,
+    "retestados": 5,
+    "percentual": 0.0
+  },
+  "testesAutomatizadosPorNivel": {
+    "Unitário": {
+      "total": 18,
+      "aprovados": 18
+    },
+    "Integração/API": {
+      "total": 24,
+      "aprovados": 24
+    },
+    "Sistema/Interface": {
+      "total": 9,
+      "aprovados": 9
+    },
+    "Não funcional": {
+      "total": 9,
+      "aprovados": 9
+    }
+  },
+  "postman": {
+    "requisicoes": 12,
+    "assercoes": 24,
+    "falhas": 0
+  },
+  "qualidade": {
+    "linhaDeBase": {
+      "commit": "1977789",
+      "eslint": {
+        "erros": 0,
+        "avisos": 31,
+        "porRegra": {
+          "no-magic-numbers": 28,
+          "max-lines-per-function": 2,
+          "complexity": 1
+        }
+      },
+      "cobertura": {
+        "linhas": 92.59,
+        "ramos": 89.61,
+        "funcoes": 89.29
+      }
+    },
+    "final": {
+      "commit": "b99bb99",
+      "eslint": {
+        "erros": 0,
+        "avisos": 10,
+        "porRegra": {
+          "no-magic-numbers": 9,
+          "max-lines-per-function": 1
+        }
+      },
+      "cobertura": {
+        "linhas": 93.8,
+        "ramos": 91.01,
+        "funcoes": 90.7
+      }
+    }
+  },
+  "naoFuncionais": {
+    "NF-01": {
+      "criterio": "p95 < 500 ms",
+      "unidade": "ms",
+      "n": 100,
+      "media": 0.88,
+      "p95": 1.97,
+      "min": 0.52,
+      "max": 2.97
+    },
+    "NF-02": {
+      "criterio": "máximo < 2000 ms",
+      "unidade": "ms",
+      "n": 10,
+      "media": 7.84,
+      "p95": 31.5,
+      "min": 4.8,
+      "max": 31.5
+    },
+    "NF-03": {
+      "criterio": "login + simulação aprovada",
+      "navegador": "Chrome 157.0.8103.79",
+      "resultado": "EMPRÉSTIMO APROVADO\nProposta gerada com sucesso."
+    },
+    "NF-04": {
+      "criterio": "login + simulação aprovada",
+      "navegador": "Firefox 160.0.1",
+      "resultado": "EMPRÉSTIMO APROVADO\nProposta gerada com sucesso."
+    },
+    "NF-05": {
+      "criterio": "sem rolagem horizontal e fluxo concluído",
+      "rolagemHorizontal": false,
+      "resultado": "EMPRÉSTIMO APROVADO\nProposta gerada com sucesso."
+    },
+    "NF-06": {
+      "criterio": "todas as respostas = 401",
+      "obtidos": {
+        "GET /api/simulacoes (sem token)": 401,
+        "GET /api/simulacoes (token inválido)": 401,
+        "POST /api/simulacoes (sem token)": 401,
+        "POST /api/simulacoes (token inválido)": 401,
+        "DELETE /api/simulacoes/1 (sem token)": 401,
+        "DELETE /api/simulacoes/1 (token inválido)": 401,
+        "POST /api/logout (sem token)": 401,
+        "POST /api/logout (token inválido)": 401
+      }
+    },
+    "NF-07": {
+      "criterio": "senha ausente em / e /app.js",
+      "senhaEncontrada": false
+    },
+    "NF-08": {
+      "criterio": "nenhuma rota retorna 200",
+      "status": [
+        404,
+        404,
+        404
+      ]
+    },
+    "NF-09": {
+      "criterio": "50 registros após reinício e JSON válido",
+      "registrosNoArquivo": 50,
+      "registrosAposReinicio": 50
+    }
+  }
+}

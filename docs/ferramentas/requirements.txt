@@ -1,0 +1,4 @@
+openpyxl
+matplotlib
+python-pptx
+pypandoc_binary

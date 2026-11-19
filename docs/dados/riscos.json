@@ -1,0 +1,14 @@
+[
+ {"id":"R-01","risco":"Falha na autenticação (acesso indevido ou bloqueio de usuário válido)","requisitos":"RF-01; RNF-03","probabilidade":"Média","impacto":"Alto","prioridade":"Alta","resposta":"CT-01 a CT-05, CT-33; IT-01, IT-02, IT-03; NF-06, NF-07; PM-02 a PM-04"},
+ {"id":"R-02","risco":"Erro nos limites de idade (fronteiras 18 e 60)","requisitos":"RF-02","probabilidade":"Alta","impacto":"Alto","prioridade":"Alta","resposta":"Valor limite CT-07 a CT-12; UT-01 a UT-05; executar primeiro e repetir após correções"},
+ {"id":"R-03","risco":"Cálculo incorreto da renda mínima (5x o valor)","requisitos":"RF-03","probabilidade":"Média","impacto":"Alto","prioridade":"Alta","resposta":"CT-13 a CT-15; UT-06, UT-07"},
+ {"id":"R-04","risco":"Empréstimo aprovado para conta inativa","requisitos":"RF-04","probabilidade":"Baixa","impacto":"Alto","prioridade":"Média","resposta":"CT-16; UT-08; IT-05; E2E-04; PM-06"},
+ {"id":"R-05","risco":"Combinação incorreta das regras na decisão ou motivos errados","requisitos":"RF-05; RF-11","probabilidade":"Média","impacto":"Alto","prioridade":"Alta","resposta":"Tabela de decisão CT-06, CT-16 a CT-18, CT-34; UT-09, UT-10, UT-16 a UT-18; IT-12; E2E-09"},
+ {"id":"R-06","risco":"Transições de estado inválidas","requisitos":"RF-06","probabilidade":"Média","impacto":"Médio","prioridade":"Média","resposta":"Teste baseado em estados CT-24 a CT-28; E2E-05, E2E-06"},
+ {"id":"R-07","risco":"Dados vazios ou inválidos aceitos como válidos","requisitos":"RF-07","probabilidade":"Alta","impacto":"Médio","prioridade":"Alta","resposta":"CT-19 a CT-23; UT-11 a UT-15; IT-06, IT-11; PM-07"},
+ {"id":"R-08","risco":"Perda ou corrupção do histórico persistido","requisitos":"RF-08; RNF-04","probabilidade":"Baixa","impacto":"Alto","prioridade":"Média","resposta":"CT-29, CT-30; IT-04, IT-10; NF-09; escrita atômica no repositório"},
+ {"id":"R-09","risco":"Exclusão remove registro errado ou não remove","requisitos":"RF-09","probabilidade":"Baixa","impacto":"Médio","prioridade":"Baixa","resposta":"CT-31; IT-07, IT-08; E2E-07; PM-09, PM-10"},
+ {"id":"R-10","risco":"Sessão permanece válida após sair ou acesso sem login","requisitos":"RF-10; RNF-03","probabilidade":"Média","impacto":"Alto","prioridade":"Alta","resposta":"CT-32, CT-33; IT-09; E2E-08; PM-11, PM-12; NF-06"},
+ {"id":"R-11","risco":"Tempo de resposta degradado","requisitos":"RNF-01","probabilidade":"Baixa","impacto":"Baixo","prioridade":"Baixa","resposta":"NF-01, NF-02; asserção de tempo no PM-05"},
+ {"id":"R-12","risco":"Incompatibilidade com navegadores ou telas pequenas","requisitos":"RNF-02","probabilidade":"Média","impacto":"Médio","prioridade":"Média","resposta":"NF-03, NF-04, NF-05"}
+]

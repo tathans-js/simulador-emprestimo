@@ -1,0 +1,6 @@
+﻿ID;Título;Requisito;Casos;Severidade;Prioridade;Status;Versão encontrada;Versão corrigida;Correção
+BUG-001;Idades 18 e 60 (limites inclusivos) resultam em EMPRÉSTIMO NEGADO;RF-02;"CT-08; CT-09 (UT-03; UT-04)";Alta;Alta;Encerrado;1.0 / 2.0.0;2.1.0;Comparação inclusiva (>= e <=) – commit 59502b6.
+BUG-002;"Idade ou renda em branco é tratada como zero e exibe NEGADO em vez de ""Dados inválidos.""";RF-07;"CT-21; CT-22 (UT-13; UT-14; UT-15)";Média;Média;Encerrado;1.0 / 2.0.0;2.1.0;Campos vazios/ausentes rejeitados antes da conversão – commit f69ffc3.
+BUG-003;Transições de estado inválidas: Finalizar sem simular e simular após Finalizado;RF-06;"CT-27; CT-28 (E2E-05; E2E-06)";Média;Média;Encerrado;1.0 / 2.0.0;2.1.0;"Máquina de estados no cliente: botões habilitados conforme o estado e botão ""Nova simulação"" – commit 9e18b69."
+BUG-004;Tela de simulação pode ser exibida e usada sem login (controle de acesso apenas no navegador);"RNF-03; RF-01";CT-33;Alta;Alta;Encerrado;1.0;2.0.0;"Versão 2.0: autenticação por token no servidor; API recusa requisições sem token – commit 8e64f72."
+BUG-005;"Valores negativos não exibem ""Dados inválidos."": validação nativa do navegador bloqueia o envio";RF-07;"CT-20; CT-23";Baixa;Média;Encerrado;2.0.0;2.1.0;"Atributo novalidate no formulário; validação feita pelo sistema – commit 71040c7."
