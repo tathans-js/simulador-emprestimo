@@ -112,7 +112,7 @@ git push origin main                       # pipeline aprovado após as correç�
 
 | Produto | Local |
 |---|---|
-| P01–P03, P07, P09–P14 (DOCX/PDF) | `docs/` (fonte .md) e `entrega/` (DOCX/PDF gerados) |
+| P01–P03, P07, P09–P14 (DOCX/PDF) | `docs/` (fonte .md) e `docs/gerados/documentos/` (DOCX/PDF gerados) |
 | Planilhas (P02, P04–P07, P10) | `docs/gerados/*.xlsx` |
 | Evidências de execução manual | `resultados/execucoes/C0`, `C1`, `C2` |
 | Defeitos | `docs/dados/defeitos.json`, `docs/gerados/P07_defeitos.*` |
