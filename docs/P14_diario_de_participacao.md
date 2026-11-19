@@ -20,7 +20,18 @@ subtitle: "Simulador de Empréstimo – Projeto Integrado P2 – TQS 2026"
 | «PREENCHER» | Pipeline executado no GitHub (falha + correção) | «PREENCHER» | | | links no P11 |
 | «PREENCHER» | Revisão final, gravação do vídeo e montagem do Drive | «PREENCHER» | | | pasta 14 e 16 |
 
-# 2. Divisão das pendências até a entrega
+# 2. Contribuição de cada integrante
+
+Divisão do trabalho conforme confirmada pelo grupo.
+
+| Integrante (RA) | Papel | Contribuição |
+|---|---|---|
+| Jonathans David da Silva P Jr (23110246) | Coordenação e planejamento | Plano de testes (P03): estratégia em pirâmide, níveis, critérios de entrada, saída e suspensão, cronograma. Requisitos e riscos (P02): 15 requisitos e 12 riscos priorizados. Ficha do sistema (P01) e evolução da v1.0 para a v2.0 (interface + API + arquivo JSON). Integração do relatório final (P12), README e montagem da pasta do Drive. |
+| Lucas Soares de Almeida (23210133) | Análise e execução manual | Catálogo de 34 casos (CT-01 a CT-34) com partição de equivalência, valor limite, tabela de decisão e estados. Execução dos ciclos C0, C1 e C2 (96 execuções com capturas). Registro dos defeitos BUG-001 a BUG-005 (P07) e das observações exploratórias OBS-01 a OBS-03. Matriz de rastreabilidade e cenários de aceitação AC-01 a AC-04 (P09). |
+| Pedro Henrique Teixeira Moroni (23110956) | Automação de testes | 18 testes unitários das regras, 12 testes de integração da API, coleção Postman (12 requisições, 24 asserções) com Newman e 9 testes Selenium ponta a ponta. Ciclo TDD do RF-11: RED `a44e590`, GREEN `263e841`, REFACTOR `ab1b0f7`. |
+| Guilherme de Oliveira Lazari (23110982) | Qualidade, métricas e CI/CD | Pipeline do GitHub Actions (`ci.yml`) e script local equivalente (falha em `1977789`, aprovação em `b99bb99`). 9 testes não funcionais. Análise de qualidade com ESLint e cobertura (31 → 10 avisos; 92,6% → 93,8% de linhas). Métricas, gráficos e planilhas (P10) e plano de melhoria M-01 a M-07 (P11). |
+
+# 3. Divisão das pendências até a entrega
 
 Distribuição planejada das tarefas que ainda precisam ser feitas (item 4.2). Ao concluir cada uma, registre-a no diário acima com data e evidência.
 
@@ -34,7 +45,7 @@ Distribuição planejada das tarefas que ainda precisam ser feitas (item 4.2). A
 | Revisar os documentos, atualizar o sumário no Word, preencher o comprovante e subir no Drive | Jonathans David da Silva P Jr | todos |
 | Ensaiar a apresentação (cada integrante precisa saber explicar todos os produtos) | todos | — |
 
-# 3. Declaração final do grupo (Apêndice M)
+# 4. Declaração final do grupo (Apêndice M)
 
 Declaramos que os arquivos entregues representam o trabalho efetivamente realizado pelo grupo, que as execuções e métricas são reais, que os dados utilizados são fictícios e que respeitamos as autorizações, licenças e orientações da disciplina.
 
